@@ -2,9 +2,28 @@ const buttons_Switches = document.querySelectorAll('.menu_item');
 const main_Canvas = document.querySelector('.main');
 const range_Audio = document.querySelector('.range_Audio');
 const img_Play_Music = document.querySelector('.img_Play_Music');
-
+const search=document.getElementById('search')
+const text_for_profile=document.querySelector('.text_for_profile')
+const head_search_container=document.querySelector('.head_search_container')
 let data_Songs;
 let Id_Playing_Songs;
+function get_author_find() {
+    fetch('http://localhost:3000/auth/getuauthor')
+        .then((data) => data.json())
+        .then((res) => {
+            console.log(res);
+        });
+        
+}
+search.addEventListener('click',()=>{
+    head_search_container.innerHTML='<input type="text">'
+})
+function login_check() {
+    text_for_profile.innerHTML = '';
+    text_for_profile.innerHTML = '<a href="/profile.html">profile</a>';
+}
+autorPage_Check_Authorization(login_check);
+get_author_find();
 function delete_QueryParam() {
     let currentUrl = window.location.href;
 
@@ -85,7 +104,9 @@ switchcase_Page_For_Start(get_Page_queryParam());
 function featch_Create_Main_Page() {
     fetch('https://project-49di.onrender.com/auth/getsongsforcreatmainpage')
         .then((data) => data.json())
+
         .then((res) => {
+            console.log(res);
             console.log('ff');
             Bild_Create_Main_Page(res);
         });
@@ -547,16 +568,24 @@ const img_Icon_Autorh_InPlayers = document.querySelector(
 
 click_Switch_Menu_Song_Button();
 function bild_switch_panel_players_music() {
-    const autorpage_head_author_content_text_info=document.querySelector('.autorPage_Head_Autor_Content_Text_info ')
-    const player_music_songs_text=document.querySelector('.player_music_songs_text')
-    const img_Icon_Autorh_InPlayers_Img=document.querySelector('.img_Icon_Autorh_InPlayers_Img')
+    const autorpage_head_author_content_text_info = document.querySelector(
+        '.autorPage_Head_Autor_Content_Text_info '
+    );
+    const player_music_songs_text = document.querySelector(
+        '.player_music_songs_text'
+    );
+    const img_Icon_Autorh_InPlayers_Img = document.querySelector(
+        '.img_Icon_Autorh_InPlayers_Img'
+    );
     const autorPage_Head_Autor_Content_Img = document.querySelector(
         '.autorPage_Head_Autor_Content_Img'
     );
     const buttons_Players_Music = document.querySelector(
         '.buttons_Players_Music'
     );
-    autorpage_head_author_content_text_info.classList.add('authorpage_head_author_content_text_info_open');
+    autorpage_head_author_content_text_info.classList.add(
+        'authorpage_head_author_content_text_info_open'
+    );
     body.classList.add('body_Players_Music_Open');
     play_Music.classList.add('play_Music_Open');
     range_Audio.classList.add('range_Audio_Open');
@@ -565,20 +594,28 @@ function bild_switch_panel_players_music() {
     autorPage_Head_Autor_Content_Img.classList.add(
         'autorPage_head_autor_Content_img_open'
     );
-    player_music_songs_text.classList.add('.player_music_songs_text_open')
-     img_Icon_Autorh_InPlayers_Img.classList.add('img_Icon_Autorh_InPlayers_Img_open')
+    player_music_songs_text.classList.add('.player_music_songs_text_open');
+    img_Icon_Autorh_InPlayers_Img.classList.add(
+        'img_Icon_Autorh_InPlayers_Img_open'
+    );
 }
 function remove_switch_panel_players_music() {
-    const autorpage_head_author_content_text_info=document.querySelector('.autorPage_Head_Autor_Content_Text_info ')
-    const player_music_songs_text=document.querySelector('.player_music_songs_text')
-    const img_Icon_Autorh_InPlayers_Img=document.querySelector('.img_Icon_Autorh_InPlayers_Img')
+    const autorpage_head_author_content_text_info = document.querySelector(
+        '.autorPage_Head_Autor_Content_Text_info '
+    );
+    const player_music_songs_text = document.querySelector(
+        '.player_music_songs_text'
+    );
+    const img_Icon_Autorh_InPlayers_Img = document.querySelector(
+        '.img_Icon_Autorh_InPlayers_Img'
+    );
     const autorPage_Head_Autor_Content_Img = document.querySelector(
         '.autorPage_Head_Autor_Content_Img'
     );
     const buttons_Players_Music = document.querySelector(
         '.buttons_Players_Music'
     );
-    player_music_songs_text.classList.remove('player_music_songs_text_open')
+    player_music_songs_text.classList.remove('player_music_songs_text_open');
     body.classList.remove('body_Players_Music_Open');
     play_Music.classList.remove('play_Music_Open');
     range_Audio.classList.remove('range_Audio_Open');
@@ -586,8 +623,12 @@ function remove_switch_panel_players_music() {
     img_Icon_Autorh_InPlayers.classList.remove(
         'img_Icon_Autorh_InPlayers_Open'
     );
-    autorpage_head_author_content_text_info.classList.remove('authorpage_head_author_content_text_info_open')
-    img_Icon_Autorh_InPlayers_Img.classList.remove('img_Icon_Autorh_InPlayers_Img_open')
+    autorpage_head_author_content_text_info.classList.remove(
+        'authorpage_head_author_content_text_info_open'
+    );
+    img_Icon_Autorh_InPlayers_Img.classList.remove(
+        'img_Icon_Autorh_InPlayers_Img_open'
+    );
     autorPage_Head_Autor_Content_Img.classList.remove(
         'autorPage_head_autor_Content_img_open'
     );
