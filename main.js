@@ -2,28 +2,38 @@ const buttons_Switches = document.querySelectorAll('.menu_item');
 const main_Canvas = document.querySelector('.main');
 const range_Audio = document.querySelector('.range_Audio');
 const img_Play_Music = document.querySelector('.img_Play_Music');
-const search=document.getElementById('search')
-const text_for_profile=document.querySelector('.text_for_profile')
-const head_search_container=document.querySelector('.head_search_container')
+const search = document.getElementById('search');
+const text_for_profile = document.querySelector('.text_for_profile');
+const head_search_container = document.querySelector('.head_search_container');
+let input_toggle = false;
 let data_Songs;
 let Id_Playing_Songs;
-function get_author_find() {
-    fetch('http://localhost:3000/auth/getuauthor')
-        .then((data) => data.json())
-        .then((res) => {
-            console.log(res);
-        });
-        
-}
-search.addEventListener('click',()=>{
-    head_search_container.innerHTML='<input type="text">'
-})
+// function get_author_find() {
+//     fetch('http://localhost:3000/auth/getuauthor')
+//         .then((data) => data.json())
+//         .then((res) => {
+//             console.log(res);
+//         });
+
+// }
+
+search.addEventListener('click', () => {
+    input_toggle
+        ? ((head_search_container.innerHTML = ''), (input_toggle = false))
+        : ((head_search_container.innerHTML = `<div class="container_search_input_head">
+    <input class="search_input_head" placeholder="Пошук авторів та музики" type="text">
+    <button class="search_button_head">
+    <img class='search_img_head'  src="img/c22d9061-59d5-4167-86b4-485922470fd8.png" alt="">
+    </button>
+    </div>`),
+          (input_toggle = true));
+});
 function login_check() {
     text_for_profile.innerHTML = '';
     text_for_profile.innerHTML = '<a href="/profile.html">profile</a>';
 }
 autorPage_Check_Authorization(login_check);
-get_author_find();
+// get_author_find();
 function delete_QueryParam() {
     let currentUrl = window.location.href;
 

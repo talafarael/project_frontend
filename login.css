@@ -1,116 +1,115 @@
-
-*{
-  margin: 0;
-  padding: 0;
+* {
+    margin: 0;
+    padding: 0;
 }
-body{
-  
-  background:url("./img/backgroundRegister.png") no-repeat center center fixed;
-  background-size: cover;
+body {
+    background: url('./img/backgroundRegister.png') no-repeat center center
+        fixed;
+    background-size: cover;
 }
-.account{
-  
+.account {
 }
-.main{
-
-height: 100vh;
-width: 100vw;
-  position: absolute;
-display: flex;
-flex-direction: column;
-align-self: center;
-align-items: center;
-justify-content: center;
-  
+.main {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
 }
-.regist{
-height:100vh;
-display: flex;
-flex-direction: column;
-justify-content: center;
+.regist {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 ::placeholder {
-  position: relative;
-  left:10px;
-  color: #FFC7C7;
+    position: relative;
+    left: 10px;
+    color: #ffc7c7;
 }
-.button :hover{
-  background-color: #221f1f;
-  cursor: pointer ;
+.button :hover {
+    background-color: #221f1f;
+    cursor: pointer;
 }
-.input_Style{
-  color: #FFC7C7;
-  width: 469px;
-height: 63px;
-flex-shrink: 0;
-border: 0px;
-border-radius: 15px;
-background: linear-gradient(180deg, rgba(58, 2, 53, 0.80) 0%, rgba(58, 2, 53, 0.28) 99.99%, rgba(58, 2, 53, 0.00) 100%), rgba(0, 0, 0, 0.20);
+.input_Style {
+    color: #ffc7c7;
+    width: 469px;
+    height: 63px;
+    flex-shrink: 0;
+    border: 0px;
+    border-radius: 15px;
+    background: linear-gradient(
+            180deg,
+            rgba(58, 2, 53, 0.8) 0%,
+            rgba(58, 2, 53, 0.28) 99.99%,
+            rgba(58, 2, 53, 0) 100%
+        ),
+        rgba(0, 0, 0, 0.2);
+}
 
-} 
-
-.button{
-  position: relative;
-  top:-100px;
-  border-radius: 5px;
-  background: #8A3333;
-  color: #FFC7C7;
-  border: none;
-  width: 150px;
-  height: 40px;
+.button {
+    position: relative;
+    top: -100px;
+    border-radius: 5px;
+    background: #8a3333;
+    color: #ffc7c7;
+    border: none;
+    width: 150px;
+    height: 40px;
 }
-button:hover{
-  background-color: #702929;
-  cursor: pointer ;
+button:hover {
+    background-color: #702929;
+    cursor: pointer;
 }
-.line{
-  position: relative;
-  bottom: 22px;
-  left:13px;
-  background:#FFC7C7;
-  width: 440px;
+.line {
+    position: relative;
+    bottom: 22px;
+    left: 13px;
+    background: #ffc7c7;
+    width: 440px;
 }
-.bottomLine{
-  position: relative;
-  bottom:110px;
-  background:#FFC7C7;
-  width: 540px;
+.bottomLine {
+    position: relative;
+    bottom: 110px;
+    background: #ffc7c7;
+    width: 540px;
 }
-.registtext{
-
-  color: #FFC7C7;
+.registtext {
+    color: #ffc7c7;
 }
-input{
-  margin-bottom:20px;
+input {
+    margin-bottom: 20px;
 }
-.registline{
-  
-  background:#FFC7C7;
-  width:60px;
+.registline {
+    background: #ffc7c7;
+    width: 60px;
 }
-.inner{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.regist_name{
-margin-bottom:10px;
-  width: 469px;
-  height: 63px;
+.regist_name {
+    margin-bottom: 10px;
+    width: 469px;
+    height: 63px;
 }
-.duck{
-  display: flex;
-  flex-direction: row;
-position: absolute;
-top:15px;
-right:15px;
+.duck {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 15px;
+    right: 15px;
 }
-.ducktext{
-  color: #FFC7C7;
+.ducktext {
+    color: #ffc7c7;
 }
-.duckimg{
-width: 50px;
-height:40px;
-  border-radius:100%;
-  background-color:#45063B;
+.duckimg {
+    width: 50px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: #45063b;
 }
