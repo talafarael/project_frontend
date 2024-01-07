@@ -26,8 +26,6 @@ flex-direction: column;
 justify-content: center;
 }
 ::placeholder {
-  position: relative;
-  left:10px;
   color: #FFC7C7;
 }
 .input_Style{
@@ -36,6 +34,9 @@ justify-content: center;
 height: 63px;
 flex-shrink: 0;
 border: 0px;
+font-size: 15px;
+padding:20px;
+box-sizing: border-box;
 border-radius: 15px;
 background: linear-gradient(180deg, rgba(58, 2, 53, 0.80) 0%, rgba(58, 2, 53, 0.28) 99.99%, rgba(58, 2, 53, 0.00) 100%), rgba(0, 0, 0, 0.20);
 
@@ -43,7 +44,7 @@ background: linear-gradient(180deg, rgba(58, 2, 53, 0.80) 0%, rgba(58, 2, 53, 0.
 
 .button{
   position: relative;
-  top:-100px;
+  top:-240px;
   border-radius: 5px;
   background: #8A3333;
   color: #FFC7C7;
@@ -60,7 +61,7 @@ background: linear-gradient(180deg, rgba(58, 2, 53, 0.80) 0%, rgba(58, 2, 53, 0.
 }
 .bottomLine{
   position: relative;
-  bottom:110px;
+  bottom:250px;
   background:#FFC7C7;
   width: 540px;
 }
