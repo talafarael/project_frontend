@@ -36,16 +36,21 @@ flex-direction: column;
 justify-content: center;
 }
 ::placeholder {
-  position: relative;
-  left:10px;
   color: #FFC7C7;
 }
 .input_Style{
+  
+  padding:15px;
+  box-sizing: border-box;
   color: #FFC7C7;
   width: 469px;
 height: 63px;
 flex-shrink: 0;
 border: 0px;
+border: 0px;
+font-size: 15px;
+padding:20px;
+box-sizing: border-box;
 border-radius: 15px;
 background: linear-gradient(180deg, rgba(58, 2, 53, 0.80) 0%, rgba(58, 2, 53, 0.28) 99.99%, rgba(58, 2, 53, 0.00) 100%), rgba(0, 0, 0, 0.20);
 
@@ -73,7 +78,7 @@ button:hover{
 }
 .bottomLine{
   position: relative;
-  top:60px;
+  top:40px;
   background:#FFC7C7;
   width: 540px;
 }
@@ -120,4 +125,4 @@ width: 50px;
 height:40px;
   border-radius:100%;
   background-color:#45063B;
-} 
+}
