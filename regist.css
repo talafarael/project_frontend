@@ -52,7 +52,7 @@ background: linear-gradient(180deg, rgba(58, 2, 53, 0.80) 0%, rgba(58, 2, 53, 0.
 } 
 .button{
 position: relative;
- 
+ top:70px;
   border-radius: 5px;
   background: #8A3333;
   color: #FFC7C7;

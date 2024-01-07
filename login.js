@@ -39,7 +39,7 @@ button.addEventListener('click', async (event) => {
      }
     }).then(data => {
         const baseUrl = window.location.origin
-        window.location.href = `${baseUrl}/main.html`;}
+        window.location.href = `${baseUrl}/project_frontend/main.html`;}
     )
 
 });

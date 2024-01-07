@@ -18,7 +18,7 @@ body:JSON.stringify({password:password})}
   if (response.ok) {
     // Redirection to the 'sendemail' route on successful registration
     const baseUrl = window.location.origin
-     window.location.href = `${baseUrl}/FE-project/main.html`;
+     window.location.href = `${baseUrl}/project_frontend/main.html`;
      console.log(baseUrl);
   }
   if (!response.ok) {
