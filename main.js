@@ -10,9 +10,17 @@ let data_Songs;
 let Id_Playing_Songs;
 let music_data;
 let author_data;
-async function getSongsSearch() {
+async function getSongsSearch(value) {
+    const val=value
+    console.log(value)
     const response = await fetch(
-        'https://project-49di.onrender.com/auth/getmusic'
+        'http://localhost:3000/auth/getmusic',{
+            method:'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        body: JSON.stringify(val),
+        }
     );
     const data = await response.json();
     return data;
@@ -24,28 +32,30 @@ async function getAuthorSearch() {
     const data = await response.json();
     return data;
 }
-async function get_author_find() {
-    music_data = await getSongsSearch();
-    author_data = await getAuthorSearch();
-    console.log( music_data)
-}
-// function Search(elem, value) {
-//     for (let i = 0; i < elem.length; i++) {
-//         for (let y = 0; y < elem[y].length; y++) {
-//             for(let z = 0; z < value[z].length; z++) {
-//            if(elem[y].length.toLowerCase()==value[z].toLowerCase()){
-//             console.log('afafaf')
-//            }
-//            }
-//         }
-//     }
+// async function get_author_find() {
+//     music_data = await getSongsSearch();
+//     author_data = await getAuthorSearch();
+//     console.log(music_data)
 // }
-function Search_button_click() {
+function Search(elem, value) {
+   
+}
+async function Search_button_click() {
     const search_button_head = document.querySelector('.search_button_head');
     const search_input_head = document.querySelector('.search_input_head');
-    search_button_head.addEventListener('click', () => {
-        const value =search_input_head.value
-        // Search(music_data, value)
+    search_button_head.addEventListener('click', async() => {
+        const value = search_input_head.value
+       console.log( value)
+       
+       fetch(
+        'http://localhost:3000/auth/getmusic',{
+            method:'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        body: JSON.stringify({value:value}),
+        }
+    ).then(res=>res.json()).then(data=>console.log(data))
     });
 }
 search.addEventListener('click', () => {
@@ -57,7 +67,7 @@ search.addEventListener('click', () => {
     <img class='search_img_head'  src="img/c22d9061-59d5-4167-86b4-485922470fd8.png" alt="">
     </button>
     </div>`),
-          (input_toggle = true));
+            (input_toggle = true));
     Search_button_click();
 });
 function login_check() {
@@ -65,7 +75,7 @@ function login_check() {
     text_for_profile.innerHTML = '<a href="/profile.html">profile</a>';
 }
 autorPage_Check_Authorization(login_check);
-get_author_find();
+
 function delete_QueryParam() {
     let currentUrl = window.location.href;
 
