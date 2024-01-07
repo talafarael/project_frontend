@@ -11,19 +11,38 @@ let Id_Playing_Songs;
 let music_data;
 let author_data;
 async function getSongsSearch(value) {
-    const val=value
-    console.log(value)
+    const val = value;
+    console.log(value);
     const response = await fetch(
-        'http://localhost:3000/auth/getmusic',{
-            method:'POST',
+        'https://project-49di.onrender.com/auth/getmusic',
+        {
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-        body: JSON.stringify(val),
+            body: JSON.stringify(val),
         }
     );
     const data = await response.json();
     return data;
+}
+function delete_QueryParam_search() {
+    let currentUrl = window.location.href;
+
+    let urlObject = new URL(currentUrl);
+
+    urlObject.searchParams.delete('find');
+    urlObject.searchParams.delete('search');
+    history.pushState({}, '', urlObject.toString());
+}
+function create_QueryParam_search(queryParam, PagequeryParam) {
+    let currentUrl = window.location.href;
+
+    let newUrl = new URL(currentUrl);
+    newUrl.searchParams.append('find', queryParam);
+    newUrl.searchParams.append('search', PagequeryParam);
+
+    history.pushState({}, '', newUrl.toString());
 }
 async function getAuthorSearch() {
     const response = await fetch(
@@ -37,26 +56,101 @@ async function getAuthorSearch() {
 //     author_data = await getAuthorSearch();
 //     console.log(music_data)
 // }
-function Search(elem, value) {
-   
-}
+function Search(elem, value) {}
 async function Search_button_click() {
     const search_button_head = document.querySelector('.search_button_head');
     const search_input_head = document.querySelector('.search_input_head');
-    search_button_head.addEventListener('click', async() => {
-        const value = search_input_head.value
-       console.log( value)
-       
-       fetch(
-        'http://localhost:3000/auth/getmusic',{
-            method:'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        body: JSON.stringify({value:value}),
-        }
-    ).then(res=>res.json()).then(data=>console.log(data))
+    search_button_head.addEventListener('click', async () => {
+        const search_input_head = document.querySelector('.search_input_head');
+
+        const value = search_input_head.value;
+        fetch_search(value);
     });
+}
+function fetch_search(value) {
+    fetch('https://project-49di.onrender.com/auth/getmusic', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ value: value }),
+    })
+        .then((res) => res.json())
+        .then((data) => {
+            bild_search(data);
+            delete_QueryParam_search();
+            delete_QueryParam();
+            create_QueryParam_search(value, 'search');
+        });
+}
+function bild_search(data) {
+    const author = data.author;
+    const musics = data.musics;
+    data_Songs = musics;
+    console.log(data);
+    main_Canvas.innerHTML = '';
+    main_Canvas.innerHTML = `<div>
+    ${author
+        .map(
+            (elem) => `<div>
+<img src=${elem.img}>
+    <h1>${elem.autor}</h1>
+    </div>`
+        )
+        .join('')}</div>
+    </div>
+   <div class='search_container_music'>
+    
+   </div>`;
+
+    musics.forEach((arr) => {
+        let like_Img = 'img/image8.png';
+        if (data.user) {
+            console.log(arr._id);
+            const like_User = data.user.liker_songs + ' ';
+            console.log(like_User.includes(arr._id));
+
+            if (like_User.includes(arr._id)) {
+                console.log('true');
+                like_Img = 'img/image 8 (2).png';
+            }
+        }
+        const search_container_music = document.querySelector(
+            '.search_container_music'
+        );
+        Id_Playing_Songs = arr.idpath;
+
+        console.log(data_Songs);
+        search_container_music.innerHTML += `
+<div class='autorPage_Div_Music_Li'>
+    
+    <button class='autorPage_Div_Music_Content_Music_Play_Button'>
+    <img class='autorPage_Div_Music_Content_Music_Play_Img ' id="${arr.idpath}" src='img/2ff977b7-2c90-41d5-813f-49170d570561.png' alt="" />
+    </button>
+    <button class='autorPage_Div_Music_Play_Button_Img_Songs'         >
+    <img class='autorPage_Div_Music_Play_Img_Songs' src='${arr.img_autor}' alt="" />
+    </button>
+    <div calss="autorPage_Div_Music_Content_Music_Head_Music"> 
+    <p class='autorPage_Div_Music_Content_Music_Name_Music'>${arr.songs}</p>
+    <p class='autorPage_Div_Music_Content_Music_Autor_Music'>${arr.autor}</p>
+    </div>
+    <div></div>
+    <div class='autorPage_Div_Music_Play_Like_Div'>
+    <div></div>
+    <div></div>
+    <p class='autorPage_Div_Music_Play_Like_Num'>${arr.like}</p>
+    <button class='autorPage_Div_Music_Play_Like_Button'>
+    <img class='autorPage_Div_Music_Play_Like' id="${arr._id} " src='${like_Img}' alt="" />
+    </button>
+    </div>
+    </div>`;
+    });
+    get_Like();
+    const autorPage_Div_Music_Content_Music_Play_Img =
+        document.querySelectorAll(
+            '.autorPage_Div_Music_Content_Music_Play_Img'
+        );
+    get_Id_Mass(autorPage_Div_Music_Content_Music_Play_Img, Button_Play_Music);
 }
 search.addEventListener('click', () => {
     input_toggle
@@ -67,7 +161,8 @@ search.addEventListener('click', () => {
     <img class='search_img_head'  src="img/c22d9061-59d5-4167-86b4-485922470fd8.png" alt="">
     </button>
     </div>`),
-            (input_toggle = true));
+          (input_toggle = true));
+
     Search_button_click();
 });
 function login_check() {
@@ -89,7 +184,9 @@ function get_Page_queryParam() {
     const urlkey = window.location.search;
     const url = new URLSearchParams(urlkey);
     const page = url.get('page');
-    return page;
+    const search = url.get('search');
+
+    return { page, search };
 }
 function create_QueryParam(queryParam, PagequeryParam) {
     let currentUrl = window.location.href;
@@ -144,11 +241,21 @@ buttons_Switches.forEach((button) => {
     });
 });
 function switchcase_Page_For_Start(param_Page_Url) {
-    if (param_Page_Url == null || param_Page_Url == 'main') {
+    console.log(param_Page_Url);
+    if (
+        (param_Page_Url.page == null && param_Page_Url.search == null) ||
+        param_Page_Url == 'main'
+    ) {
         featch_Create_Main_Page();
     }
-    if (param_Page_Url == 'autor') {
+    if (param_Page_Url.page == 'autor') {
         autor();
+    }
+    if (param_Page_Url.search === 'search') {
+        const urlkey = window.location.search;
+        const url = new URLSearchParams(urlkey);
+        const page = url.get('find');
+        fetch_search(page);
     }
 }
 switchcase_Page_For_Start(get_Page_queryParam());
@@ -164,6 +271,7 @@ function featch_Create_Main_Page() {
         });
 }
 function Bild_Create_Main_Page(res) {
+    delete_QueryParam_search();
     delete_QueryParam();
     const arry = res.arr;
     console.log(arry);
@@ -180,6 +288,7 @@ function Create_autor_Card(arry) {
     const mainPage_Autor_Div_For_card = document.querySelector(
         '.mainPage_Autor_Div_For_card'
     );
+
     arry.autor.forEach((autor) => {
         const img = autor.img;
 
