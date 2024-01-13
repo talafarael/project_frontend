@@ -38,17 +38,16 @@ body {
 
     grid-area: a;
 }
-.head_search_container{
+.head_search_container {
     width: 100%;
     display: grid;
     justify-content: end;
 }
 .search_input_head::placeholder {
-  color: rgba(255, 199, 199, 0.70);
-  }
+    color: rgba(255, 199, 199, 0.7);
+}
 .search_input_head {
-    
-    color: rgba(255, 199, 199, 0.70);
+    color: rgba(255, 199, 199, 0.7);
     padding-left: 25px;
     position: absolute;
     width: 443.366px;
@@ -68,13 +67,12 @@ body {
     position: relative;
 
     width: 443.366px;
- height: 54px;
-    
+    height: 54px;
 }
-.search_img_head{
+.search_img_head {
     width: 36.656px;
-height: 37.385px;
-flex-shrink: 0;
+    height: 37.385px;
+    flex-shrink: 0;
 }
 .search_button_head {
     margin-top: 2%;
@@ -244,8 +242,8 @@ a {
 }
 .mainPage_Autor_Div_For_card {
     width: 100%;
-    display: grid;
-    grid-template-columns: 3% 16% 3% 16% 3% 16% 3% 16% 3% 16%;
+    display: flex;
+    justify-content: space-around;
 }
 .mainPage_Autor_Card_Img_Button {
     position: relative;
@@ -280,8 +278,8 @@ a {
 }
 
 .autorPage_Head_Autor_Content_Img_Main {
-    width: 75%;
-    height: 75%;
+    width: 213px;
+    height: 213px;
     flex-shrink: 0;
 
     border-radius: 50%;
@@ -321,22 +319,22 @@ a {
 }
 .autorPage_Head_Autor_Content_Img_Center {
     border-radius: 250px;
-    width: 105%;
-    height: 40%;
+    width: 120px;
+    height: 120px;
     flex-shrink: 0;
     grid-area: autorPage_Head_Autor_Content_Img_Center;
 }
 .autorPage_Head_Autor_Content_Img_Rigth {
-    width: 75%;
-    height: 30%;
+    width: 85px;
+    height: 85px;
     flex-shrink: 0;
     border-radius: 200px;
     grid-area: autorPage_Head_Autor_Content_Img_Rigth;
     margin-left: -40%;
 }
 .autorPage_Head_Autor_Content_Img_Left {
-    width: 75%;
-    height: 30%;
+    width: 85px;
+    height: 85px;
     flex-shrink: 0;
     grid-area: autorPage_Head_Autor_Content_Img_Left;
     position: relative;
@@ -372,12 +370,11 @@ a {
     color: #ffc7c7;
 
     font-family: Montserrat;
-    font-size: 250%;
+    font-size: 30px;
     font-style: normal;
     font-weight: 400px;
     line-height: normal;
-    width: 178px;
-    height: 66px;
+
     flex-shrink: 0;
     grid-area: autorPage_Head_Autor_Content_Text_title;
 }
@@ -386,9 +383,9 @@ a {
     color: #ffc7c7;
     margin-top: 1%;
     font-family: Montserrat;
-    font-size: 95%;
+    font-size: 15px;
     font-style: normal;
-    margin-left: -5%;
+    margin-left: 5%;
     font-weight: 400;
     line-height: normal;
     grid-area: autorPage_Head_Autor_Content_Text_info;
@@ -559,13 +556,15 @@ a {
     margin-left: 0;
 }
 .body_Players_Music_Open {
-    grid-template-columns: 20% 42%;
+    grid-template-columns: 20% 52%;
 }
 .play_Music_Open {
     transition-duration: 0.5s;
     display: grid;
+    margin-right: 0px;
     grid-template-rows: 10% 60% 10% 10%;
     grid-template-columns: 100%;
+    justify-content: center;
     grid-template-areas:
         'switch_Menu_Song_Img'
         'img_Icon_Autorh_InPlayers_Open'
@@ -574,11 +573,13 @@ a {
 }
 .switch_Menu_Song_Button_Open {
     margin-top: 0px;
+    margin-right: 0px;
 }
 .range_Audio_Open {
     margin-left: 5%;
     transform: rotate(0deg);
     margin-top: 0;
+    margin-right: 0px;
     grid-area: range_Audio_Open;
     width: 80%;
     margin-left: 15%;
@@ -588,19 +589,21 @@ a {
     border: 0;
 }
 .img_Icon_Autorh_InPlayers_Img {
-    width: 80%;
+    width: 100px;
     height: 100px;
     border-radius: 50%;
 }
 
 .img_Icon_Autorh_InPlayers_Open {
+    width: 400px;
+    height: 400px;
     background: rgb(0, 0, 0);
     background: none;
     border: 0;
     grid-area: img_Icon_Autorh_InPlayers_Open;
 }
 .buttons_Players_Music_Open {
-    margin-left: 44%;
+    margin-left: auto;
 }
 .player_music_songs_text {
     opacity: 0;
@@ -610,4 +613,11 @@ a {
 }
 .player_music_songs_text_open {
     opacity: 1;
+}
+
+@media (max-width: 1200px) {
+    .img_Icon_Autorh_InPlayers_Img_open {
+        width: 100px;
+        height: 100px;
+    }
 }
