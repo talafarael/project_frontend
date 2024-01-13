@@ -235,7 +235,7 @@ a {
     flex-shrink: 0;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 29% 71%;
+    grid-template-rows: 50% 50%;
     background: linear-gradient(180deg, #45063b 0%, rgba(69, 6, 59, 0) 100%);
 
     backdrop-filter: blur(2px);
@@ -278,8 +278,8 @@ a {
 }
 
 .autorPage_Head_Autor_Content_Img_Main {
-    width: 213px;
-    height: 213px;
+    width: 183px;
+    height: 183px;
     flex-shrink: 0;
 
     border-radius: 50%;
@@ -614,10 +614,92 @@ a {
 .player_music_songs_text_open {
     opacity: 1;
 }
-
-@media (max-width: 1200px) {
-    .img_Icon_Autorh_InPlayers_Img_open {
+@media (max-width: 1700px) {
+    .img_Icon_Autorh_InPlayers_Open {
+        width: 300px;
+        height: 300px;
+    }
+    .autorPage_Head_Autor_Content_Img_Center {
         width: 100px;
         height: 100px;
     }
+    .autorPage_Head_Autor_Content_Img_Rigth {
+        width: 75px;
+        height: 75px;
+    }
+    .autorPage_Head_Autor_Content_Img_Left {
+        width: 75px;
+        height: 75px;
+    }
+    .autorPage_Head_Autor_Content_Img_Main {
+        width: 153px;
+        height: 153px;
+    }
 }
+@media (max-width: 1600px) {
+    .img_Icon_Autorh_InPlayers_Open {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 1400px) {
+}
+
+@media (max-width: 1300px) {
+    .img_Icon_Autorh_InPlayers_Open{
+        width: 300px;
+        height: 300px;
+    }
+    .autorPage_Head_Autor_Content {
+        display: grid;
+        grid-template-columns: 42% 58%;
+    }
+
+    .profile {
+        width: 50px;
+        height: 50px;
+        flex-shrink: 0;
+    }
+    .menu_item {
+        margin-left: 26px;
+        grid-template-rows: 40px;
+        grid-template-columns: 20px 20px 20px 100px;
+    }
+    .menu_img {
+        width: 20px;
+        height: 20px;
+    }
+    .menu_item:hover {
+        margin-left: 26px;
+    }
+    .autorPage_Head_Autor_Content_Text_title {
+        margin-left: 30px;
+        font-size: 15px;
+    }
+    .autorPage_Head_Autor_Content_Text_info {
+        
+        margin-left: 0%;
+    }
+    .img_Icon_Autorh_InPlayers_Img {
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+    }
+    .switch_Menu_Song_Button {
+        padding: auto;
+        display: flex;
+        justify-content: center;
+    }
+    .switch_Menu_Song_Img {
+        margin: 10px;
+    }
+    .autorPage_Head_Autor_Content_Text_info {
+        font-size: 12px;}
+    .autorPage_Head_Autor_Content_Text{
+   padding-left: 50px;
+    }
+}
+@media (max-width: 1100px) {
+    .autorPage_Head_Autor_Content_Text_info {
+        font-size: 10px;}}
