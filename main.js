@@ -646,13 +646,16 @@ function checks_Play_Music(id_Element) {
     if (audio.paused) {
         audio.play();
         authorths_Page_Img_Icon();
+        if ( document.getElementById(Id_Playing_Songs)) {
         document.getElementById(Id_Playing_Songs).src =
             'img/icons8-pause-30.png';
+        }
         img_Play_Music.src = ' img/icons8-pause-30.png';
     } else {
         audio.pause();
+        if ( document.getElementById(Id_Playing_Songs)) {
         document.getElementById(Id_Playing_Songs).src =
-            'img/2ff977b7-2c90-41d5-813f-49170d570561.png';
+            'img/2ff977b7-2c90-41d5-813f-49170d570561.png';}
         img_Play_Music.src = 'img/2ff977b7-2c90-41d5-813f-49170d570561.png';
     }
 }
@@ -750,7 +753,9 @@ function bild_switch_panel_players_music() {
     play_Music.classList.add('play_Music_Open');
     range_Audio.classList.add('range_Audio_Open');
     buttons_Players_Music.classList.add('buttons_Players_Music_Open');
-    img_Icon_Autorh_InPlayers_Img.classList.add('img_Icon_Autorh_InPlayers_Open')
+    img_Icon_Autorh_InPlayers_Img.classList.add(
+        'img_Icon_Autorh_InPlayers_Open'
+    );
     player_music_songs_text.classList.add('.player_music_songs_text_open');
 }
 function remove_switch_panel_players_music() {
@@ -777,5 +782,7 @@ function remove_switch_panel_players_music() {
     img_Icon_Autorh_InPlayers.classList.remove(
         'img_Icon_Autorh_InPlayers_Open'
     );
-    img_Icon_Autorh_InPlayers_Img.classList.remove('img_Icon_Autorh_InPlayers_Open')
+    img_Icon_Autorh_InPlayers_Img.classList.remove(
+        'img_Icon_Autorh_InPlayers_Open'
+    );
 }
