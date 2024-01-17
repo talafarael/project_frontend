@@ -1,4 +1,4 @@
-
+const containerError=document.querySelector('.containerError')
 const button=document.querySelector('.button')
 function creatTime(){
     const now = new Date();
@@ -31,18 +31,24 @@ button.addEventListener('click', async (event) => {
     // Отправляем запрос на сервер
     fetch('https://project-49di.onrender.com/auth/login', options)
     .then(response => response.json())
+    
     .then(data => {
         
         console.log(data.token);
+        if(data.token){
       localStorage.setItem('token',data.token)
      localStorage.setItem('time',creatTime() )
-     if( localStorage.getItem('token')>=0){
-
-     }
-    }).then(data => {
+        }
+        return data
+    }).then(data=> {
+        console.log(data.message)
+      if(data.token){
         const baseUrl = window.location.origin
-         window.location.href = `${baseUrl}/project_frontend/main.html`;
+         window.location.href = `${baseUrl}/main.html`;
+       } 
+       containerError.innerHTML=`${data.message}`
     }
+   
     )
 
 });

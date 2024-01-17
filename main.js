@@ -4,6 +4,7 @@ const range_Audio = document.querySelector('.range_Audio');
 const img_Play_Music = document.querySelector('.img_Play_Music');
 const search = document.getElementById('search');
 const text_for_profile = document.querySelector('.text_for_profile');
+const Alert=document.querySelector('.Alert')
 const head_search_container = document.querySelector('.head_search_container');
 let input_toggle = false;
 let data_Songs;
@@ -206,6 +207,16 @@ function autorPage_Check_Authorization(function_True) {
     } else {
         localStorage.removeItem('time');
         console.log('aaa');
+    }
+}
+function falseTrue_Check_Authorization(function_True) {
+    const time = localStorage.getItem('time');
+    console.log(now_Time());
+    if (time - now_Time() >= 0) {
+        return true
+    } else {
+        localStorage.removeItem('time');
+        return false
     }
 }
 function check_Suaitability_token() {
@@ -571,18 +582,54 @@ function get_Like() {
     const autorPage_Div_Music_Play_Like = document.getElementsByClassName(
         'autorPage_Div_Music_Play_Like'
     );
-    for (var j = 0; j < autorPage_Div_Music_Play_Like.length; j++) {
+    for (let j = 0; j < autorPage_Div_Music_Play_Like.length; j++) {
         autorPage_Div_Music_Play_Like[j].addEventListener(
             'click',
             function (event) {
-                var id_Like = event.target.id;
+                const res=falseTrue_Check_Authorization()
+                let id_Like =event.target.id;
+                console.log( data_Songs)
+                console.log(id_Like)
+                if(res){
+                
 
                 autorPage_Check_Authorization(() =>
                     autorPage_Like_Function(id_Like)
                 );
-            }
+            }else{
+         
+                const text = data_Songs.find(({ _id }) => _id.trim() === String(id_Like).trim());
+
+                console.log(text)
+                drawAlertLogin(text)
+                
+            }}
         );
     }
+}
+function drawAlertLogin(data){
+Alert.innerHTML+=`
+<div class='alertLoginAll'></div>
+<div class='alertLogin'>
+<div class=''><img class='alertImg' src=${data.img_autor} alt=""></div>
+<div class='alertTextContainer'>
+<h1 class='alertText'>щоб лайкнути пісню зареєструйтесь або війдіть в аккаунт</h1>
+
+
+<a href="/login.html">
+<button class='alertButton'>війти</button>
+</a>
+<a href="regist.html">
+<button class='alertButton'>зареєструватися</button>
+</a>
+</div>
+</div>
+`
+const alertLoginAll=document.querySelector('.alertLoginAll')
+alertLoginAll.addEventListener('click',()=>{
+    Alert.innerHTML=''
+})
+
 }
 function autorPage_Like_Function(idlike) {
     const token = localStorage.getItem('token');
