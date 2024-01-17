@@ -967,4 +967,30 @@ a {
         grid-template-columns: 20% 60%;
         grid-template-rows: 25% 25% 25% 25%;
     }
+    .menu_item {
+        width: 40px;
+      font-size: 0px;
+    }
+    .line_menu{
+        margin-left: 30px;
+        width: 35px;
+    }
+.range_Audio{
+    width: 50px;
+}
+.autorPage_Head_Autor_Content{
+    width: 40Vh;
+    display: grid;
+    grid-template-columns: 70%;
+    grid-template-rows: 70% 30%;
+}
+
+
+.autorPage_Div_Music_Li {
+    margin-top: 1%;
+    display: grid;
+    grid-template-rows: 100%;
+    height: 6%;
+    width: 85%;
+    margin-left: 0%;}
 }
