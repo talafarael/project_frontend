@@ -589,6 +589,7 @@ a {
     width: 40px;
     height: 40px;
 }
+
 .next_Song_Img {
     margin-left: -5px;
     width: 150%;
@@ -690,7 +691,13 @@ a {
         height: 300px;
     }
 }
-
+.autorPage_Div_Music_Play_Like_Button:hover{
+   
+    background: url('./img/image 8 (2).png');
+    background-size: 23px 23px;
+    height: 20px;
+    width: 23px;
+}
 @media (max-width: 1400px) {
 }
 
