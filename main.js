@@ -535,7 +535,7 @@ function featch_autorPage_Create_Autor(info) {
 
     <p class='autorPage_Head_Autor_Content_Text_title'> ${autors.autor}</p>
     <p class='autorPage_Head_Autor_Content_Text_info'>${autors.title}</p>
-    <p>#rock</p>
+   
     </div>`;
 
     const autorPage_Head_Autor_Content_Img_SwitcheCase =
