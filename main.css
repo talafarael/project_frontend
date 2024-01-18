@@ -907,7 +907,7 @@ a {
     }
    
     .play_Music {
-      position: fixed;
+      position: sticky;
         display: grid;
         grid-template-areas: 'switch_Menu_Song_Button  img_Icon_Autorh_InPlayers buttons_Players_Music range_Audio';
   top: 170vw;
