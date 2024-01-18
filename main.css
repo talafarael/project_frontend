@@ -8,6 +8,7 @@ body {
     background-repeat: no-repeat;
 }
 .main{
+    padding-top: 20px;
     display: inline-block; 
     height: 100vh;
     overflow-x: scroll;
