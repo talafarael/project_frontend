@@ -8,7 +8,9 @@ body {
     background-repeat: no-repeat;
 }
 .main{
-    overflow-y:scroll;
+    display: inline-block; 
+    height: 100vh;
+    overflow-x: scroll;
 }
 .body {
     width: 100vw;
