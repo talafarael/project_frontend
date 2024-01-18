@@ -7,6 +7,9 @@ body {
     background-size: cover; /* Масштабирует фон */
     background-repeat: no-repeat;
 }
+.main{
+    overflow-y:scroll;
+}
 .body {
     width: 100vw;
     height: 100vh;
