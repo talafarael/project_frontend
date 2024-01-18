@@ -964,7 +964,7 @@ a {
 }
 @media (max-width: 600px) {
     .head{ 
-     
+        position: sticky;
     }
     .mainPage_autor_Div {
         width: 70%;
