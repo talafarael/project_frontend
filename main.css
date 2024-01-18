@@ -436,8 +436,8 @@ a {
     border: 0;
 }
 .autorPage_Div_Music_Content_Music_Play_Img {
-    width: 20px;
-    height: 25px;
+    width: 25px;
+    height: 30px;
     aspect-ratio: 1 / 1;
 }
 .autorPage_Div_Music_Li {
@@ -915,7 +915,11 @@ a {
         height: 100%;
 
         grid-template-rows: 40%;
-        grid-template-columns: 10% 20% 20% 0% 50%;
+        grid-template-columns: 0% 20% 20% 0% 50%;
+    }
+    .switch_Menu_Song_Img{
+        width: 0px;
+        height: 0px;
     }
     .profile_container {
         grid-template-rows: 80%;
@@ -966,6 +970,10 @@ a {
     .head{ 
        
         position: sticky;
+    }
+    .autorPage_Head_Autor_Content_Img_Main{
+        width: 130px;
+        height: 130px;
     }
     .mainPage_autor_Div {
         width: 70%;
@@ -1069,13 +1077,13 @@ a {
         display: grid;
         grid-template-rows: 100%;
         margin-left: -5vw;
-        height: 37px;
+        height: 40px;
         width: 70vw;
       
         background: rgba(138, 51, 51, 0.3);
     }
     .autorPage_Div_Music_Play_Img_Songs {
-        margin-top: 0.25vh;
+        margin-top: 0.5vh;
         margin-left: -5vw;
         width: 25px;
         height: 25px;
@@ -1192,7 +1200,7 @@ a {
     .autorPage_Head_Autor_Content_Text_info {
         margin-left: 5px;
         width: 60vw;
-        font-size: 8px;
+        font-size: 6px;
     }
     .autorPage_Div_Music_Content {
         margin-left: auto;
