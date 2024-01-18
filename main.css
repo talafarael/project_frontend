@@ -1062,10 +1062,10 @@ a {
         margin-top: 5px;
         display: grid;
         grid-template-rows: 100%;
-
-        height: 30px;
-        width: 60vw;
-        margin-left: 0%;
+        margin-left: -2vw;
+        height: 35px;
+        width: 65vw;
+      
         background: rgba(138, 51, 51, 0.3);
     }
     .autorPage_Div_Music_Play_Img_Songs {
@@ -1106,6 +1106,7 @@ a {
         margin-top: 0px;
     }
     .autorPage_Div_Music_Play_Like_Div {
+        width: auto;
         display: grid;
         grid-template-rows: 5% 10%;
         grid-template-columns: 20% 40%;
@@ -1125,7 +1126,7 @@ a {
         width: 0;
     }
     .autorPage_Div_Music_Content_Music_Autor_Music{
-        width: 100px;
+        width: 0px;
     }
 }
 .autorPage_Div_Music_Play_Like_Num {
@@ -1168,12 +1169,17 @@ a {
         margin-left: -20px;
     }
     .autorPage_Div_Music_Content {
-        margin-left: 20px;
+        margin-left: auto;
     }
     .autorPage_Head_Autor_Content {
         width: 70vw;
         display: grid;
         grid-template-columns: 100%;
+    }
+    .autorPage_Div_Music_Play_Like_Div{
+        padding-left: 50px;
+        margin-left: -50px;
+        width: 0px;
     }
 }
 @media (max-width: 450px) {
@@ -1182,10 +1188,7 @@ a {
         width: 60vw;
         font-size: 8px;
     }
-    .autorPage_Head_Autor_Content {
-        margin-left: -8vw;
-        width: 70vw;
-        display: grid;
-        grid-template-columns: 100%;
+    .autorPage_Div_Music_Content {
+        margin-left: auto;
     }
 }
