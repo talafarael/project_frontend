@@ -907,10 +907,10 @@ a {
     }
    
     .play_Music {
-      position: fixed;
+        position: fixed;
         display: grid;
         grid-template-areas: 'switch_Menu_Song_Button  img_Icon_Autorh_InPlayers buttons_Players_Music range_Audio';
-  top: 170vw;
+  top: 160vw;
         width: 100%;
         height: 100%;
 
@@ -941,7 +941,7 @@ a {
 
         width: 100%;
         height: 100%;
-
+  
         grid-template-rows: 40%;
         grid-template-columns: 10% 20% 20% 0% 50%;
     }
