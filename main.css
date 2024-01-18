@@ -8,10 +8,10 @@ body {
     background-repeat: no-repeat;
 }
 .main{
-    padding-top: 20px;
+   
     display: inline-block; 
     height: 100vh;
-    overflow-x: scroll;
+    overflow-y: scroll;
 }
 .body {
     width: 100vw;
@@ -1200,6 +1200,9 @@ a {
     .autorPage_Div_Music_Play_Like_Div{
         
         width: 0px;
+    }
+    .autorPage_Head_Autor_Content{
+        margin-top: 10px;
     }
 }
 @media (max-width: 450px) {
