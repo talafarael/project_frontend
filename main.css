@@ -976,7 +976,8 @@ a {
 }
 @media (max-width: 600px) {
     .head{ 
-       
+        left: 30px;
+       width: 100%;
         position: fixed;
     }
     .autorPage_Head_Autor_Content_Img_Main{
