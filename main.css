@@ -8,7 +8,7 @@ body {
     background-repeat: no-repeat;
 }
 .main{
-   
+   overflow: auto;
     
     height: 100vh;
    
@@ -31,7 +31,7 @@ body {
     flex-shrink: 0;
 }
 .head {    
-     z-index: 0;
+     z-index: 1;
     display: grid;
     grid-template-columns: 21% 56% 20%;
     color: #ffc7c7;
