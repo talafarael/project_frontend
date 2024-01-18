@@ -11,8 +11,8 @@ body {
     width: 100vw;
     height: 100vh;
     display: grid;
-    grid-template-columns: 20% 71% 9%;
-    grid-template-rows: 14% 86%;
+    grid-template-columns: 20vw 71vw 9vw;
+    grid-template-rows: 14% 86;
     grid-template-areas:
         'a a c'
         'b f c';
