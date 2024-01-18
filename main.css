@@ -907,7 +907,7 @@ a {
     }
    
     .play_Music {
-      position: sticky;
+      position: fixed;
         display: grid;
         grid-template-areas: 'switch_Menu_Song_Button  img_Icon_Autorh_InPlayers buttons_Players_Music range_Audio';
   top: 170vw;
@@ -964,6 +964,7 @@ a {
 }
 @media (max-width: 600px) {
     .head{ 
+       
         position: sticky;
     }
     .mainPage_autor_Div {
