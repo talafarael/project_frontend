@@ -918,7 +918,7 @@ a {
         position: fixed;
         display: grid;
         grid-template-areas: 'switch_Menu_Song_Button  img_Icon_Autorh_InPlayers buttons_Players_Music range_Audio';
-  top: 80vh;
+  bottom: 0;
         width: 100%;
         height: 10vh;
 
