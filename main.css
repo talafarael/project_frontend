@@ -675,6 +675,7 @@ a {
 }
 @media (max-width: 1700px) {
     .menu{
+        transition: 1s;
         position: fixed;
         top: 20%;
         width:  15%;
