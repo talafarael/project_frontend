@@ -31,7 +31,7 @@ body {
     flex-shrink: 0;
 }
 .head {    
-     z-index: 0;
+     z-index: 1;
     display: grid;
     grid-template-columns: 21% 56% 20%;
     color: #ffc7c7;
@@ -43,7 +43,7 @@ body {
     position: fixed;
     width: 90%;
   height: 15%;
- 
+ top: 0;
     grid-area: a;
 }
 .head_search_container {
@@ -979,6 +979,7 @@ a {
         left: 30px;
        width: 100%;
         position: fixed;
+        top: 0;
     }
     .autorPage_Head_Autor_Content_Img_Main{
         width: 130px;
