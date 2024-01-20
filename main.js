@@ -84,6 +84,21 @@ function fetch_search(value) {
             create_QueryParam_search(value, 'search');
         });
 }
+function transitionAuthorPage(event){
+    
+    event.forEach((elem)=> {
+        elem.addEventListener('click',(e)=>{
+            const clickedId = e.target.id;
+            const Author=clickedId.split('_')
+        console.log(clickedId)
+        delete_QueryParam_search()
+        create_QueryParam(Author[1], 'autor')
+        autor()
+    })
+    });
+    
+   
+}
 function bild_search(data) {
     const author = data.author;
     const musics = data.musics;
@@ -93,9 +108,12 @@ function bild_search(data) {
     main_Canvas.innerHTML = `<div>
     ${author
         .map(
-            (elem) => `<div>
-<img src=${elem.img}>
-    <h1>${elem.autor}</h1>
+           
+            (elem) => 
+            `<div class='searchAuthorContainer' id='autor_${elem.autor}'>
+
+<img   id='autor_${elem.autor}' src=${elem.img}>
+    <h1  id='autor_${elem.autor}'>${elem.autor}</h1>
     </div>`
         )
         .join('')}</div>
@@ -103,6 +121,9 @@ function bild_search(data) {
    <div class='search_container_music'>
     
    </div>`;
+    const searchAuthorContainer=document.querySelectorAll('.searchAuthorContainer')
+    console.log( searchAuthorContainer)
+   transitionAuthorPage(searchAuthorContainer)
 
     musics.forEach((arr) => {
         let like_Img = 'img/image8.png';
