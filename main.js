@@ -92,6 +92,7 @@ function transitionAuthorPage(event){
             const Author=clickedId.split('_')
         console.log(clickedId)
         delete_QueryParam_search()
+        delete_QueryParam() 
         create_QueryParam(Author[1], 'autor')
         autor()
     })
