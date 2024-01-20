@@ -4,7 +4,7 @@ const range_Audio = document.querySelector('.range_Audio');
 const img_Play_Music = document.querySelector('.img_Play_Music');
 const search = document.getElementById('search');
 const text_for_profile = document.querySelector('.text_for_profile');
-const Alert=document.querySelector('.Alert')
+const Alert = document.querySelector('.Alert');
 const head_search_container = document.querySelector('.head_search_container');
 let input_toggle = false;
 let data_Songs;
@@ -84,21 +84,19 @@ function fetch_search(value) {
             create_QueryParam_search(value, 'search');
         });
 }
-function transitionAuthorPage(event){
-    
-    event.forEach((elem)=> {
-        elem.addEventListener('click',(e)=>{
+function transitionAuthorPage(event) {
+    event.forEach((elem) => {
+        elem.addEventListener('click', (e) => {
             const clickedId = e.target.id;
-            const Author=clickedId.split('_')
-        console.log(clickedId)
-        delete_QueryParam_search()
-        delete_QueryParam() 
-        create_QueryParam(Author[1], 'autor')
-        autor()
-    })
+            const Author = clickedId.split('_');
+            console.log(clickedId);
+            delete_QueryParam_search();
+            delete_QueryParam();
+            create_QueryParam(Author[1], 'autor');
+            autor();
+            inputSearch()
+        });
     });
-    
-   
 }
 function bild_search(data) {
     const author = data.author;
@@ -109,9 +107,8 @@ function bild_search(data) {
     main_Canvas.innerHTML = `<div>
     ${author
         .map(
-           
-            (elem) => 
-            `<div class='searchAuthorContainer' id='autor_${elem.autor}'>
+            (elem) =>
+                `<div class='searchAuthorContainer' id='autor_${elem.autor}'>
 
 <img   id='autor_${elem.autor}' src=${elem.img}>
     <h1  id='autor_${elem.autor}'>${elem.autor}</h1>
@@ -122,9 +119,11 @@ function bild_search(data) {
    <div class='search_container_music'>
     
    </div>`;
-    const searchAuthorContainer=document.querySelectorAll('.searchAuthorContainer')
-    console.log( searchAuthorContainer)
-   transitionAuthorPage(searchAuthorContainer)
+    const searchAuthorContainer = document.querySelectorAll(
+        '.searchAuthorContainer'
+    );
+    console.log(searchAuthorContainer);
+    transitionAuthorPage(searchAuthorContainer);
 
     musics.forEach((arr) => {
         let like_Img = 'img/image8.png';
@@ -175,7 +174,7 @@ function bild_search(data) {
         );
     get_Id_Mass(autorPage_Div_Music_Content_Music_Play_Img, Button_Play_Music);
 }
-search.addEventListener('click', () => {
+function inputSearch() {
     input_toggle
         ? ((head_search_container.innerHTML = ''), (input_toggle = false))
         : ((head_search_container.innerHTML = `<div class="container_search_input_head">
@@ -185,6 +184,9 @@ search.addEventListener('click', () => {
     </button>
     </div>`),
           (input_toggle = true));
+}
+search.addEventListener('click', () => {
+    inputSearch();
 
     Search_button_click();
 });
@@ -235,10 +237,10 @@ function falseTrue_Check_Authorization(function_True) {
     const time = localStorage.getItem('time');
     console.log(now_Time());
     if (time - now_Time() >= 0) {
-        return true
+        return true;
     } else {
         localStorage.removeItem('time');
-        return false
+        return false;
     }
 }
 function check_Suaitability_token() {
@@ -608,29 +610,28 @@ function get_Like() {
         autorPage_Div_Music_Play_Like[j].addEventListener(
             'click',
             function (event) {
-                const res=falseTrue_Check_Authorization()
-                let id_Like =event.target.id;
-                console.log( data_Songs)
-                console.log(id_Like)
-                if(res){
-                
+                const res = falseTrue_Check_Authorization();
+                let id_Like = event.target.id;
+                console.log(data_Songs);
+                console.log(id_Like);
+                if (res) {
+                    autorPage_Check_Authorization(() =>
+                        autorPage_Like_Function(id_Like)
+                    );
+                } else {
+                    const text = data_Songs.find(
+                        ({ _id }) => _id.trim() === String(id_Like).trim()
+                    );
 
-                autorPage_Check_Authorization(() =>
-                    autorPage_Like_Function(id_Like)
-                );
-            }else{
-         
-                const text = data_Songs.find(({ _id }) => _id.trim() === String(id_Like).trim());
-
-                console.log(text)
-                drawAlertLogin(text)
-                
-            }}
+                    console.log(text);
+                    drawAlertLogin(text);
+                }
+            }
         );
     }
 }
-function drawAlertLogin(data){
-Alert.innerHTML+=`
+function drawAlertLogin(data) {
+    Alert.innerHTML += `
 <div class='alertLoginAll'></div>
 <div class='alertLogin'>
 <div class=''><img class='alertImg' src=${data.img_autor} alt=""></div>
@@ -646,12 +647,11 @@ Alert.innerHTML+=`
 </a>
 </div>
 </div>
-`
-const alertLoginAll=document.querySelector('.alertLoginAll')
-alertLoginAll.addEventListener('click',()=>{
-    Alert.innerHTML=''
-})
-
+`;
+    const alertLoginAll = document.querySelector('.alertLoginAll');
+    alertLoginAll.addEventListener('click', () => {
+        Alert.innerHTML = '';
+    });
 }
 function autorPage_Like_Function(idlike) {
     const token = localStorage.getItem('token');
@@ -715,16 +715,17 @@ function checks_Play_Music(id_Element) {
     if (audio.paused) {
         audio.play();
         authorths_Page_Img_Icon();
-        if ( document.getElementById(Id_Playing_Songs)) {
-        document.getElementById(Id_Playing_Songs).src =
-            'img/icons8-pause-30.png';
+        if (document.getElementById(Id_Playing_Songs)) {
+            document.getElementById(Id_Playing_Songs).src =
+                'img/icons8-pause-30.png';
         }
         img_Play_Music.src = ' img/icons8-pause-30.png';
     } else {
         audio.pause();
-        if ( document.getElementById(Id_Playing_Songs)) {
-        document.getElementById(Id_Playing_Songs).src =
-            'img/2ff977b7-2c90-41d5-813f-49170d570561.png';}
+        if (document.getElementById(Id_Playing_Songs)) {
+            document.getElementById(Id_Playing_Songs).src =
+                'img/2ff977b7-2c90-41d5-813f-49170d570561.png';
+        }
         img_Play_Music.src = 'img/2ff977b7-2c90-41d5-813f-49170d570561.png';
     }
 }
