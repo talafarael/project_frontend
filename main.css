@@ -378,9 +378,9 @@ a {
     color: #ffc7c7;
 
     font-family: Montserrat;
-    font-size: 30px;
+    font-size: 20px;
     font-style: normal;
-    font-weight: 400px;
+  
     line-height: normal;
 
     flex-shrink: 0;
@@ -403,7 +403,7 @@ a {
 }
 .autorPage_Head_Autor_Content_Text {
     padding-top: -25px;
-
+margin-left: 60px;
     display: grid;
     grid-template-columns: 10% 70%;
     grid-template-row: 20% 30%;
@@ -452,7 +452,7 @@ a {
     display: grid;
     grid-template-rows: 100%;
     grid-template-columns: 8% 6% 10% 40% 20%;
-    height: 7vh;
+    height: 60px;
     padding-left: 0;
 }
 .autorPage_Div_Music_Play_Button_Img_Songs {
