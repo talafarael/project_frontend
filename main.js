@@ -43,7 +43,21 @@ async function bildSaveSongPage(){
     }));
  }
 
+ function autorPage_Like_FunnctioSearch(idlike,fun) {
+    const token = localStorage.getItem('token');
 
+    console.log(idlike);
+    fetch('https://project-49di.onrender.com/auth/musiclike', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ idlike: idlike, token: token }),
+    }).then(() => {
+        autorPage_Check_Authorization(() =>fun());
+        return console.log('all good');
+    });
+}
 function SaveSongsBild(data){
     main_Canvas.innerHTML =''
     data_Songs=data
@@ -94,7 +108,7 @@ function SaveSongsBild(data){
 
     const saveSongsButton = document.querySelectorAll('.saveSongsButton');
     saveSongs(saveSongsButton);
-    get_Like();
+    get_Like2();
     const autorPage_Div_Music_Content_Music_Play_Img =
         document.querySelectorAll(
             '.autorPage_Div_Music_Content_Music_Play_Img'
@@ -120,6 +134,34 @@ function saveSongs(event) {
             drawAlertLogin(text);
         }})
     });
+}
+function get_Like2() {
+    const autorPage_Div_Music_Play_Like = document.getElementsByClassName(
+        'autorPage_Div_Music_Play_Like'
+    );
+    for (let j = 0; j < autorPage_Div_Music_Play_Like.length; j++) {
+        autorPage_Div_Music_Play_Like[j].addEventListener(
+            'click',
+            function (event) {
+                const res = falseTrue_Check_Authorization();
+                let id_Like = event.target.id;
+                console.log(data_Songs);
+                console.log(id_Like);
+                if (res) {
+                    autorPage_Check_Authorization(() =>
+                    autorPage_Like_FunnctioSearch(id_Like,bildSaveSongPage)
+                    );
+                } else {
+                    const text = data_Songs.find(
+                        ({ _id }) => _id.trim() === String(id_Like).trim()
+                    );
+
+                    console.log(text);
+                    drawAlertLogin(text);
+                }
+            }
+        );
+    }
 }
 function saveSongsFetch(idSongs,token) {
     fetch('https://project-49di.onrender.com/auth/savemusic',{
