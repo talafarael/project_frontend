@@ -3,6 +3,8 @@ const main_Canvas = document.querySelector('.main');
 const range_Audio = document.querySelector('.range_Audio');
 const img_Play_Music = document.querySelector('.img_Play_Music');
 const search = document.getElementById('search');
+
+const savePage=document.querySelector('.savePage')
 const text_for_profile = document.querySelector('.text_for_profile');
 const Alert = document.querySelector('.Alert');
 const head_search_container = document.querySelector('.head_search_container');
@@ -11,6 +13,122 @@ let data_Songs;
 let Id_Playing_Songs;
 let music_data;
 let author_data;
+savePage.addEventListener('click',()=>{
+    const res = falseTrue_Check_Authorization();
+    if (res) {
+        const token=localStorage.getItem('token')
+        delete_QueryParam_search();
+        delete_QueryParam();
+        create_QueryParam('','save');
+        bildSaveSongPage()
+    } else {
+       const text=''
+    drawAlertLogin(text);
+}
+}
+)
+async function bildSaveSongPage(){
+    const token=localStorage.getItem('token')
+    await fetch(
+        'https://project-49di.onrender.com/auth/getsavemusic',
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify( {token:token}),
+        }
+    ).then((res)=>res.json().then(data=>{
+        SaveSongsBild(data)
+    }));
+ }
+
+
+function SaveSongsBild(data){
+    main_Canvas.innerHTML =''
+    data_Songs=data
+    data.forEach((arr) => {
+        let like_Img = 'img/image8.png';
+        if (data.user) {
+            console.log(arr._id);
+            const like_User = data.user.liker_songs + ' ';
+            console.log(like_User.includes(arr._id));
+
+            if (like_User.includes(arr._id)) {
+                console.log('true');
+                like_Img = 'img/image 8 (2).png';
+            }
+        }
+
+        Id_Playing_Songs = arr.idpath;
+        main_Canvas.innerHTML += `
+    <div class='autorPage_Div_Music_Li'>
+        
+        <button class='autorPage_Div_Music_Content_Music_Play_Button'>
+        <img class='autorPage_Div_Music_Content_Music_Play_Img ' id="${arr.idpath}" src='img/2ff977b7-2c90-41d5-813f-49170d570561.png' alt="" />
+        </button>
+        <button class='autorPage_Div_Music_Play_Button_Img_Songs'         >
+        <img class='autorPage_Div_Music_Play_Img_Songs' src='${arr.img_autor}' alt="" />
+        </button>
+        <div calss="autorPage_Div_Music_Content_Music_Head_Music"> 
+        <p class='autorPage_Div_Music_Content_Music_Name_Music'>${arr.songs}</p>
+        <p class='autorPage_Div_Music_Content_Music_Autor_Music'>${arr.autor}</p>
+        </div>
+            
+        <div class='autorPage_Div_Music_Play_Like_Div'>
+        <div></div>
+        <div></div>
+        <p class='autorPage_Div_Music_Play_Like_Num'>${arr.like}</p>
+        <button class='autorPage_Div_Music_Play_Like_Button'>
+        <img class='autorPage_Div_Music_Play_Like' id="${arr._id} " src='${like_Img}' alt="" />
+        </button>
+        </div> 
+     <button class='saveSongsButton' id='${arr._id}'>
+     <img id='${arr._id}' class='saveSongsImg' src='img/saveIcon.png' alt="" />
+     </button>
+        </div>
+        
+      
+        </div>`;
+    });
+
+    const saveSongsButton = document.querySelectorAll('.saveSongsButton');
+    saveSongs(saveSongsButton);
+    get_Like();
+    const autorPage_Div_Music_Content_Music_Play_Img =
+        document.querySelectorAll(
+            '.autorPage_Div_Music_Content_Music_Play_Img'
+        );
+    get_Id_Mass(autorPage_Div_Music_Content_Music_Play_Img, Button_Play_Music);
+}
+function saveSongs(event) {
+    event.forEach((elem) => {
+        elem.addEventListener('click', (e) => {
+            const res = falseTrue_Check_Authorization();
+          const token=localStorage.getItem('token')
+            let id_Like = e.target.id;
+            console.log(data_Songs);
+            console.log(id_Like);
+            if (res) {
+                saveSongsFetch(id_Like,token) 
+            } else {
+                const text = data_Songs.find(
+                    ({ _id }) => _id.trim() === String(id_Like).trim()
+                );
+           
+            console.log(text);
+            drawAlertLogin(text);
+        }})
+    });
+}
+function saveSongsFetch(idSongs,token) {
+    fetch('https://project-49di.onrender.com/auth/savemusic',{
+        method:'POST',headers:{
+            "Content-Type":'application/json'
+        },
+        body: JSON.stringify({idSongs,token}),
+    })
+}
 async function getSongsSearch(value) {
     const val = value;
     console.log(value);
@@ -94,7 +212,7 @@ function transitionAuthorPage(event) {
             delete_QueryParam();
             create_QueryParam(Author[1], 'autor');
             autor();
-            inputSearch()
+            inputSearch();
         });
     });
 }
@@ -164,7 +282,8 @@ function bild_search(data) {
     <button class='autorPage_Div_Music_Play_Like_Button'>
     <img class='autorPage_Div_Music_Play_Like' id="${arr._id} " src='${like_Img}' alt="" />
     </button>
-    </div>
+   
+    </div> 
     </div>`;
     });
     get_Like();
@@ -285,6 +404,9 @@ function switchcase_Page_For_Start(param_Page_Url) {
     }
     if (param_Page_Url.page == 'autor') {
         autor();
+    }
+    if(param_Page_Url.page=='save'){
+        bildSaveSongPage()
     }
     if (param_Page_Url.search === 'search') {
         const urlkey = window.location.search;
@@ -454,7 +576,7 @@ function featch_autorPage_Create_MusicPlayer(data) {
         <p class='autorPage_Div_Music_Content_Music_Name_Music'>${arr.songs}</p>
         <p class='autorPage_Div_Music_Content_Music_Autor_Music'>${arr.autor}</p>
         </div>
-        <div></div>
+            
         <div class='autorPage_Div_Music_Play_Like_Div'>
         <div></div>
         <div></div>
@@ -462,10 +584,18 @@ function featch_autorPage_Create_MusicPlayer(data) {
         <button class='autorPage_Div_Music_Play_Like_Button'>
         <img class='autorPage_Div_Music_Play_Like' id="${arr._id} " src='${like_Img}' alt="" />
         </button>
+        </div> 
+     <button class='saveSongsButton' id='${arr._id}'>
+     <img id='${arr._id}' class='saveSongsImg' src='img/saveIcon.png' alt="" />
+     </button>
         </div>
+        
+      
         </div>`;
     });
 
+    const saveSongsButton = document.querySelectorAll('.saveSongsButton');
+    saveSongs(saveSongsButton);
     get_Like();
     const autorPage_Div_Music_Content_Music_Play_Img =
         document.querySelectorAll(
@@ -473,6 +603,7 @@ function featch_autorPage_Create_MusicPlayer(data) {
         );
     get_Id_Mass(autorPage_Div_Music_Content_Music_Play_Img, Button_Play_Music);
 }
+
 function Function_Next_Music_For_Play_List() {
     for (let i = 0; i < data_Songs.length; i++) {
         data = data_Songs[i].idpath;
