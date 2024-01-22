@@ -540,6 +540,9 @@ margin-left: 60px;
     align-items: center;
     flex-direction: column;
 }
+.mainPage_Autor_title{
+    color: #ffc7c7;
+}
 .alertText {
     font-size: 25px;
     width: 75%;
@@ -979,7 +982,12 @@ margin-left: 60px;
     .switch_Menu_Song_Img {
         margin-top: 0px;
     }
-
+.autorPage_Head_Autor_Content{
+    margin-left: 0px;
+}
+.autorPage_Head_Autor_Content_Img_Slider{
+    margin-left: 50px;
+}
     .buttons_Players_Music {
         margin-top: 20px;
     }
@@ -989,11 +997,14 @@ margin-left: 60px;
     }
     .autorPage_Div_Music_Content_Music_Autor_Music {
         font-size: 10px;
-        margin-left: 30px;
+        margin-left: 00px;
         margin-top: 3px;
     }
 }
 @media (max-width: 600px) {
+    .autorPage_Head_Autor_Content_Img_Slider{
+        margin-left: 0px;
+    }
     .saveSongsImg{
         height: 15px;
         width: 15px;
