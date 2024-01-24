@@ -504,27 +504,28 @@ margin-left: 60px;
     margin-top: 1%;
     margin-left: 5%;
 }
+
 .autorPage_Div_Music_Play_Like_Button {
     border: 0;
     background: none;
 }
 .autorPage_Div_Music_Play_Like {
-    width: 75%;
-    height: 75%;
+    margin-top: 1px;
+    width: 25px;
+    height: 25px;
     flex-shrink: 0;
 }
 .autorPage_Div_Music_Play_Like_Num {
     color: #ffc7c7;
-    margin-top: -10%;
+    margin-top: auto;
     font-family: Inter;
     font-size: 150%;
     font-style: normal;
-    font-weight: 400;
+    
     line-height: normal;
-    width: 91.695px;
-    height: 63px;
+    
     flex-shrink: 0;
-    margin-left: 90%;
+    margin-left: auto;
 }
 .alertLoginAll {
     left: 0;
@@ -685,6 +686,7 @@ margin-left: 60px;
 .player_music_songs_text_open {
     opacity: 1;
 }
+
 @media (max-width: 1700px) {
     .menu{
         transition: 1s;
@@ -866,6 +868,23 @@ margin-left: 60px;
     margin-top: 0.45vh;
 }
 @media (max-width: 800px) {
+    .search_input_head{
+        margin-top: 10px;
+      height: 30px;
+        width: 140px;
+        padding-left: 2px;
+        margin-left: 310px;
+    }
+    .search_input_head{
+
+        font-size: 8px;
+    }
+    .search_img_head{
+        margin-top: 6px;
+        margin-left: 30px;
+        width: 20px;
+        height: 20px;
+    }
     .saveSongsImg{
         height: 25px;
         width: 25px;
@@ -910,6 +929,7 @@ margin-left: 60px;
         width: 30px;
         height: 30px;
     }
+    
     .profile {
         width: 30px;
         height: 30px;
@@ -935,7 +955,9 @@ margin-left: 60px;
         width: 50px;
         height: 50px;
     }
-   
+   .searchAllAuthorContainer{
+    display: grid;
+   }
     .play_Music {
         position: fixed;
         display: grid;
@@ -1042,7 +1064,7 @@ margin-left: 60px;
     }
     .mainPage_Autor_Card_Img {
         width: 68px;
-        height: 88px;
+        height: 78px;
         flex-shrink: 0;
     }
     .autorPage_Head_Autor_Content {
@@ -1056,7 +1078,7 @@ margin-left: 60px;
         width: 148px;
         height: 160px;
         width: 68px;
-        height: 88px;
+        height: 78px;
     }
     .mainPage_Autor_Card_Img_Button:hover h1 {
         font-size: 8px;
@@ -1182,24 +1204,25 @@ margin-left: 60px;
         height: 0px;
     }
     .autorPage_Div_Music_Play_Like_Num {
-        margin-top: 0px;
+        margin-top: auto;
+        
     }
     .autorPage_Div_Music_Play_Like_Div {
         width: auto;
         display: grid;
-        grid-template-rows: 5% 10%;
-        grid-template-columns: 20% 40%;
+        grid-template-rows: 0% 100%;
+        grid-template-columns: 20% 60%;
     }
     .autorPage_Div_Music_Play_Like_Num {
-      width: 0px;
+      margin-top: 3px;
         font-size: 8px;
-        margin-top: 4px;
-        height: 100%;
+     
+        height:auto;
     }
     .autorPage_Div_Music_Play_Like {
   
-        width: 15px;
-        height: 15px;
+        width: 10px;
+        height: 10px;
     }
     .autorPage_Div_Music_Content_Music_Head_Music {
         width: 0;
@@ -1207,8 +1230,10 @@ margin-left: 60px;
     .autorPage_Div_Music_Content_Music_Autor_Music{
         width: auto;
     }
+    .range_Audio{
+    margin-left: 15vw;
+   width:  35vw;
 }
-
 .next_Song_Img{
     width: 30px;
     height: 30px;
@@ -1217,10 +1242,7 @@ margin-left: 60px;
     width: 30px;
     height: 35px;
 }
-.range_Audio{
-    margin-left: 15vw;
-   width:  35vw;
-}
+
 .previous_Song_Img{
     width: 30px;
     height: 30px;
@@ -1228,6 +1250,9 @@ margin-left: 60px;
 .autorPage_Div_Music_Play_Like_Num {
     height: 100%;
 }
+}
+
+
 @media (max-width: 500px) {
     .logo {
         margin-left: 2px;

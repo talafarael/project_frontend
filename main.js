@@ -264,7 +264,7 @@ function bild_search(data) {
     data_Songs = musics;
     console.log(data);
     main_Canvas.innerHTML = '';
-    main_Canvas.innerHTML = `<div>
+    main_Canvas.innerHTML = `<div class='searchAllAuthorContainer'>
     ${author
         .map(
             (elem) =>
