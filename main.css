@@ -858,7 +858,7 @@ margin-left: 60px;
     .mainPage_Autor_Div_For_card {
         width: 50%;
         display: grid;
-        grid-template-columns: 0%60% 5% 60%;
+        grid-template-columns: 0% 60% 5% 60%;
         grid-template-rows: 50% 50%;
     }
 }
@@ -1024,10 +1024,10 @@ margin-left: 60px;
         margin-left: 30%;
     }
     .mainPage_Autor_Div_For_card {
-        margin-left: 0%;
+        margin-left:5%;
         display: grid;
-        grid-template-columns: 20% 60%;
-        grid-template-rows: 25% 25% 25% 25%;
+        grid-template-columns: 0% 25% 3% 25%;
+        grid-template-rows: 60%;
     }
     .menu_item {
         width: 40px;
@@ -1040,13 +1040,33 @@ margin-left: 60px;
     .range_Audio {
         width: 50px;
     }
+    .mainPage_Autor_Card_Img {
+        width: 68px;
+        height: 88px;
+        flex-shrink: 0;
+    }
     .autorPage_Head_Autor_Content {
         width: 40vh;
         display: grid;
         grid-template-columns: 70%;
         grid-template-rows: 70% 30%;
     }
-
+    .mainPage_Autor_Card_Img_Button:hover div {
+        position: absolute;
+        width: 148px;
+        height: 160px;
+        width: 68px;
+        height: 88px;
+    }
+    .mainPage_Autor_Card_Img_Button:hover h1 {
+        font-size: 8px;
+        bottom:70px;
+  left: 10px;
+        position: absolute;
+    
+        opacity: 1;
+        color: #ffc7c7;
+    }
     .div_for_header {
         font-size: 15px;
     }
@@ -1188,6 +1208,23 @@ margin-left: 60px;
         width: auto;
     }
 }
+
+.next_Song_Img{
+    width: 30px;
+    height: 30px;
+}
+.img_Play_Music{
+    width: 30px;
+    height: 35px;
+}
+.range_Audio{
+    margin-left: 15vw;
+   width:  35vw;
+}
+.previous_Song_Img{
+    width: 30px;
+    height: 30px;
+}
 .autorPage_Div_Music_Play_Like_Num {
     height: 100%;
 }
@@ -1205,7 +1242,7 @@ margin-left: 60px;
         padding-left: 0px;
     }
     .mainPage_autor_Div {
-        margin-left: 0px;
+        margin-left:auto;
         padding: 0px;
     }
     .profile {
