@@ -919,7 +919,7 @@ margin-left: 60px;
         grid-area: switch_Menu_Song_Button;
     }
     .img_Icon_Autorh_InPlayers {
-        margin-top: 20px;
+        margin-top: 15px;
         grid-area: img_Icon_Autorh_InPlayers;
     }
     .buttons_Players_Music {
@@ -927,7 +927,7 @@ margin-left: 60px;
         grid-area: buttons_Players_Music;
     }
     .range_Audio {
-        margin-top: 37px;
+        margin-top: 32px;
         margin-left: 25px;
         grid-area: range_Audio;
     }
