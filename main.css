@@ -9,10 +9,15 @@ body {
 }
 .main{
    overflow: auto;
-    
+   
     height: 100vh;
    
 }
+.main::-webkit-scrollbar {
+    width: 0; /* Ширина полосы прокрутки */
+}
+
+
 .body {
     width: 100vw;
     height: 100vh;
@@ -160,7 +165,7 @@ a {
 }
 .body_menu {
     display: grid;
-    padding-top: 10%;
+    padding-top: 20%;
     margin-top: 7%;
 }
 .text_menu {
@@ -258,6 +263,7 @@ a {
     background: none;
     border: 0;
 }
+
 .mainPage_Autor_Card_Autor_Name {
     margin: -50px;
     color: none;
@@ -431,8 +437,8 @@ margin-left: 60px;
     display: grid;
     grid-template-rows: 100%;
     height: 6%;
-    width: 85%;
-    margin-left: 5%;
+    width: 70%;
+    margin-left:10%;
     background: rgba(138, 51, 51, 0.3);
 }
 .autorPage_Div_Music_Content_MusicLIst {
@@ -452,7 +458,7 @@ margin-left: 60px;
 .autorPage_Div_Music_Li {
     display: grid;
     grid-template-rows: 100%;
-    grid-template-columns: 10% 6% 50% 20% 20%;
+    grid-template-columns: 10% 10% 40% 20% 20%;
     height: 60px;
     padding-left: 0;
 }
@@ -486,9 +492,9 @@ margin-left: 60px;
     font-family: Inter;
     font-size: 120%;
     font-style: normal;
-    font-weight: 400;
+   
     line-height: normal;
-    margin-top: 4%;
+    margin-top: 3%;
 }
 .autorPage_Div_Music_Content_Music_Autor_Music {
     width: 289.314px;
@@ -499,7 +505,7 @@ margin-left: 60px;
     font-family: Inter;
     font-size: 75%;
     font-style: normal;
-    font-weight: 400;
+
     line-height: normal;
     margin-top: 1%;
     margin-left: 5%;
@@ -605,27 +611,61 @@ margin-left: 60px;
 .switch_Menu_Song_Button {
     background: none;
     border: 0;
-    margin-right: 50px;
+    margin-right: 3.5vw;
 }
 .switch_Menu_Song_Img {
     grid-area: switch_Menu_Song_Img;
     width: 40px;
     height: 40px;
 }
+.searchAllAuthorContainer{
+    overflow-y: auto;
+    padding-left: 5%;
+    width: 95%;
+   display: grid;
+height: 300px;
+ grid-template-rows: 100%;
+   grid-template-columns: 20% 20% 20% 20%;
+   }
+   .searchAuthorContainer{
+    font-size: 11px;
+    color: #ffc7c7;
+    border-radius: 25px;
+    display: flex;
+       margin-left: 5%;
+    flex-direction: column;
+    justify-content:flex-end ;
+    align-items:    center;
+    width: 93%;
 
+    box-shadow:5px 5px 3px 3 px #45063b;
+    background: linear-gradient(
+            180deg,
+            rgba(58, 2, 53, 0.8) 0%,
+            rgba(58, 2, 53, 0.28) 99.99%,
+            rgba(58, 2, 53, 0) 100%
+        ),;
+        height: 95%;
+   }
+   .searchAuthorImg{
+ 
+    border-radius: 25px;
+    width: 175px;
+    height: 175px;
+   }
 .next_Song_Img {
     margin-left: -5px;
-    width: 150%;
-    height: 150%;
+    width: 120%;
+    height: 120%;
 }
 .previous_Song_Img {
-    width: 150%;
-    height: 150%;
+    width: 120%;
+    height: 120%;
 }
 .buttons_Players_Music {
     grid-area: buttons_Players_Music;
     display: flex;
-    margin-left: 0;
+    margin-left: 10px;
 }
 .body_Players_Music_Open {
     grid-template-columns: 20% 52%;
@@ -686,7 +726,16 @@ margin-left: 60px;
 .player_music_songs_text_open {
     opacity: 1;
 }
+.autorPage_Div_Music_Content_Music_Head_Music{
+    width:100%;
+}
+.autorPage_Div_Music_Content_Music_Autor_Music {
 
+   
+  margin-left: 0px;
+   
+  
+}
 @media (max-width: 1700px) {
     .menu{
         transition: 1s;
@@ -751,7 +800,7 @@ margin-left: 60px;
         grid-template-columns: 20px 20px 20px 100px;
     }
     .body_menu {
-        padding-top: 35%;
+        padding-top: 50%;
     }
     .menu_img {
         width: 20px;
@@ -809,6 +858,11 @@ margin-left: 60px;
     }
 }
 @media (max-width: 1100px) {
+    .autorPage_Div_Music_Li {
+     
+        width: 95%;
+        margin-left:0%;
+    }
     .body_menu {
         padding-top: 35%;
     }
@@ -834,6 +888,9 @@ margin-left: 60px;
     }
     .autorPage_Head_Autor_Content_Img_Main {
         margin-left: 26%;
+    }
+    .search_container_music{
+        margin-top: 20px;
     }
     .autorPage_Head_Autor_Content_Img_Left {
         margin-left: 10%;
@@ -865,7 +922,7 @@ margin-left: 60px;
     }
 }
 .autorPage_Div_Music_Play_Img_Songs {
-    margin-top: 0.45vh;
+    margin-top: 0.25vh;
 }
 @media (max-width: 800px) {
     .search_input_head{
@@ -879,6 +936,7 @@ margin-left: 60px;
 
         font-size: 8px;
     }
+  
     .search_img_head{
         margin-top: 6px;
         margin-left: 30px;
@@ -955,9 +1013,7 @@ margin-left: 60px;
         width: 50px;
         height: 50px;
     }
-   .searchAllAuthorContainer{
-    display: grid;
-   }
+   
     .play_Music {
         position: fixed;
         display: grid;
@@ -1019,7 +1075,7 @@ margin-left: 60px;
     }
     .autorPage_Div_Music_Content_Music_Autor_Music {
         font-size: 10px;
-        margin-left: 00px;
+        margin-left: 30px;
         margin-top: 3px;
     }
 }
@@ -1185,7 +1241,7 @@ margin-left: 60px;
     }
     .autorPage_Div_Music_Content_Music_Head_Music {
         margin-top: 0px;
-        height: 0;
+       
         width: auto;
     }
     .autorPage_Div_Music_Content_Music_Name_Music {

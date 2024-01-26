@@ -270,7 +270,7 @@ function bild_search(data) {
             (elem) =>
                 `<div class='searchAuthorContainer' id='autor_${elem.autor}'>
 
-<img   id='autor_${elem.autor}' src=${elem.img}>
+<img class='searchAuthorImg'  id='autor_${elem.autor}' src=${elem.img}>
     <h1  id='autor_${elem.autor}'>${elem.autor}</h1>
     </div>`
         )
@@ -715,7 +715,8 @@ function featch_autorPage_Create_Autor(info) {
     const autorPage_Head_Autor_Content = document.querySelector(
         '.autorPage_Head_Autor_Content'
     );
-    img_Icon_Autorh_InPlayers_Img.src = autors.img;
+ if(img_Icon_Autorh_InPlayers_Img.src==''){
+    img_Icon_Autorh_InPlayers_Img.src = autors.img;}
     autorPage_Head_Autor_Content.innerHTML = `<div class='autorPage_Head_Autor_Content_Img'>
     
     <img class='autorPage_Head_Autor_Content_Img_Main' src="${autors.img}" alt="">
