@@ -44,7 +44,7 @@ button.addEventListener('click', async (event) => {
         console.log(data.message)
       if(data.token){
         const baseUrl = window.location.origin
-         window.location.href = `${baseUrl}/main.html`;
+         window.location.href =`../Main/main.html`;
        } 
        containerError.innerHTML=`${data.message}`
     }

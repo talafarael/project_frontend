@@ -28,7 +28,7 @@ button.addEventListener('click', async (event) => {
       if (response.ok) {
          // Redirection to the 'sendemail' route on successful registration
          const baseUrl = window.location.origin
-      window.location.href = `${baseUrl}/code.html`;
+      window.location.href = `../Code/code.html`;
         console.log(baseUrl);
          
       }
