@@ -4,8 +4,9 @@
  <p align="center">
  Welcome to DuckMusic, your go-to music platform for an unparalleled audio streaming experience. Discover, enjoy, and share your favorite tunes effortlessly with our feature-packed application. </p>
 <img src='https://img.shields.io/badge/javascript-e?style=flat&logo=standardjs&logoColor=%235A45FF&color=%23F3DF49'>
+ <h1>Features</h1>
  <p align="center">
- Features
+ 
 1. Extensive Music Library
 Explore a vast collection of songs across various genres, from chart-toppers to indie gems. DuckMusic caters to all musical tastes, ensuring there's something for everyone.
 
