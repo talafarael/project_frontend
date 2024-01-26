@@ -1,4 +1,4 @@
-<h1 align="center" color="green">
+<h1 align="center" style="color:green">
  DUCKMUSIC
  </h1>
  <p align="center">
