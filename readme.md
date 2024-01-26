@@ -5,6 +5,7 @@
  Welcome to DuckMusic, your go-to music platform for an unparalleled audio streaming experience. Discover, enjoy, and share your favorite tunes effortlessly with our feature-packed application. </p>
 <img src='https://img.shields.io/badge/javascript-e?style=flat&logo=standardjs&logoColor=%235A45FF&color=%23F3DF49'><img src='https://img.shields.io/badge/css-e?style=flat&logo=css3&color=%231572B6'>
 
+<img src='https://img.shields.io/badge/html-e?style=flat&logo=html5&logoColor=white&color=%23E34F26'><img src='https://img.shields.io/badge/css-e?style=flat&logo=css3&color=%231572B6'>
 
  <h1 align="center"> Features </h1>
  <p align="center">
