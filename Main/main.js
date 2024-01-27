@@ -728,7 +728,8 @@ function featch_autorPage_Create_Autor(info) {
 	const autorPage_Head_Autor_Content = document.querySelector(
 		".autorPage_Head_Autor_Content"
 	)
-	if (img_Icon_Autorh_InPlayers_Img.src == "") {
+	console.log(img_Icon_Autorh_InPlayers_Img.src)
+	if (img_Icon_Autorh_InPlayers_Img.src == "http://127.0.0.1:5500/img/a3029645548_16.jpg") {
 		img_Icon_Autorh_InPlayers_Img.src = autors.img
 	}
 	autorPage_Head_Autor_Content.innerHTML = `<div class='autorPage_Head_Autor_Content_Img'>
