@@ -15,7 +15,9 @@ body {
 .main::-webkit-scrollbar {
 	width: 0; /* Ширина полосы прокрутки */
 }
-
+.searchAllAuthorContainer::-webkit-scrollbar {
+	width: 0; /* Ширина полосы прокрутки */
+}
 .body {
 	width: 100vw;
 	height: 100vh;
@@ -638,12 +640,7 @@ a {
 	width: 93%;
 
 	box-shadow: 5px 5px 3px 3 px #45063b;
-	background: linear-gradient(
-		180deg,
-		rgba(58, 2, 53, 0.8) 0%,
-		rgba(58, 2, 53, 0.28) 99.99%,
-		rgba(58, 2, 53, 0) 100%
-	);
+ background: #7f2d2d;
 	height: 95%;
 }
 .searchAuthorImg {
@@ -1096,8 +1093,27 @@ a {
 	.mainPage_Autor_Div_For_card {
 		margin-left: 5%;
 		display: grid;
-		grid-template-columns: 0% 25% 3% 25%;
-		grid-template-rows: 60%;
+		grid-template-columns: 0% 25% 0%  25%;
+		grid-template-rows: 35% 35% 35%;
+	}
+	.searchAllAuthorContainer {
+		margin-left: 0;
+		width: 80%;
+		padding-left: 0%;
+		height: 150px;
+		grid-template-columns: auto auto auto auto;
+	}
+	.searchAuthorContainer {
+		font-size: 6px;
+		margin-left: 10px;
+		width: 100px;
+	}
+	
+	.searchAuthorImg {
+		
+		border-radius: 25px;
+		width: 75px;
+		height: 75px;
 	}
 	.menu_item {
 		width: 40px;
