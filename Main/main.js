@@ -3,8 +3,9 @@ const main_Canvas = document.querySelector(".main")
 const range_Audio = document.querySelector(".range_Audio")
 const img_Play_Music = document.querySelector(".img_Play_Music")
 const search = document.getElementById("search")
-
+const buttonSubtitlesSong=document.querySelector('.buttonSubtitlesSong')
 const savePage = document.querySelector(".savePage")
+const textPlayers=document.querySelector('.textPlayers')
 const text_for_profile = document.querySelector(".text_for_profile")
 const Alert = document.querySelector(".Alert")
 const head_search_container = document.querySelector(".head_search_container")
@@ -12,6 +13,7 @@ let input_toggle = false
 let data_Songs
 let Id_Playing_Songs
 let music_data
+
 let author_data
 savePage.addEventListener("click", () => {
 	const res = falseTrue_Check_Authorization()
@@ -676,9 +678,16 @@ function Function_Next_Music_For_Play_List() {
 			} else {
 				Id_Playing_Songs = data_Songs[next_Song].idpath
 				audio.src = data_Songs[next_Song].idpath
+				
 				audio.play()
-				img_Icon_Autorh_InPlayers_Img.src =
+				console.log(data_Songs[next_Song])
+  
+				textPlayersMusic.innerHTML=''
+				textPlayersMusic.innerHTML=`${data_Songs[next_Song].songs}`
+				img_Icon_Autorh_InPlayers_Img.src =data_Songs[next_Song].autor
 					data_Songs[next_Song].img_autor
+					img_Play_Music.src =
+"../img/icons8-pause-30.png"
 				document.getElementById(data_Songs[i].idpath).src =
 					"../img/2ff977b7-2c90-41d5-813f-49170d570561.png"
 				document.getElementById(data_Songs[next_Song].idpath).src =
@@ -690,7 +699,7 @@ function Function_Next_Music_For_Play_List() {
 }
 
 function Function_Previous_Music_For_Play_List() {
-	for (i = 0; i < data_Songs.length; i++) {
+	for (let i = 0; i < data_Songs.length; i++) {
 		data = data_Songs[i].idpath
 		if (data == Id_Playing_Songs) {
 			console.log("aaaa")
@@ -698,26 +707,36 @@ function Function_Previous_Music_For_Play_List() {
 			next_Song = i - 1
 			console.log(data_Songs.length)
 			console.log(next_Song)
-			if (-1 > next_Song) {
+			if (0 > next_Song) {
 				document.getElementById(data_Songs[i].idpath).src =
 					"../img/2ff977b7-2c90-41d5-813f-49170d570561.png"
 				audio.pause()
 				break
+				
 			} else {
+				img_Play_Music.src =
+				"../img/icons8-pause-30.png"
 				Id_Playing_Songs = data_Songs[next_Song].idpath
 				audio.src = data_Songs[next_Song].idpath
 				audio.play()
+		
 				img_Icon_Autorh_InPlayers_Img.src =
 					data_Songs[next_Song].img_autor
+					textPlayersMusic.innerHTML=''
+				textPlayersMusic.innerHTML=`${data_Songs[next_Song].songs}`
 				document.getElementById(data_Songs[i].idpath).src =
 					"../img/2ff977b7-2c90-41d5-813f-49170d570561.png"
 				document.getElementById(data_Songs[next_Song].idpath).src =
 					" ../img/icons8-pause-30.png"
+							
 				break
 			}
 		}
 	}
 }
+buttonSubtitlesSong.addEventListener('click',()=>{
+
+})
 const img_Icon_Autorh_InPlayers_Img = document.querySelector(
 	".img_Icon_Autorh_InPlayers_Img"
 )
@@ -907,6 +926,7 @@ function checks_Play_Music(id_Element) {
 	authorths_Page_Img_Icon()
 	if (audio.paused) {
 		audio.play()
+		
 		authorths_Page_Img_Icon()
 		if (document.getElementById(Id_Playing_Songs)) {
 			document.getElementById(Id_Playing_Songs).src =
@@ -927,6 +947,8 @@ function authorths_Page_Img_Icon() {
 		data = data_Songs[i].idpath
 		if (data == Id_Playing_Songs) {
 			img_Icon_Autorh_InPlayers_Img.src = data_Songs[i].img_autor
+			textPlayersMusic.innerHTML=''
+				textPlayersMusic.innerHTML=`${data_Songs[i].songs}`
 		}
 	}
 }
@@ -1012,8 +1034,9 @@ function bild_switch_panel_players_music() {
 	)
 
 	body.classList.add("body_Players_Music_Open")
-
+	textPlayersMusic.classList.add('textPlayersMusicOpen')
 	play_Music.classList.add("play_Music_Open")
+	textPlayers.classList.add('textPlayersOpen')
 	range_Audio.classList.add("range_Audio_Open")
 	buttons_Players_Music.classList.add("buttons_Players_Music_Open")
 	img_Icon_Autorh_InPlayers_Img.classList.add(
@@ -1037,6 +1060,8 @@ function remove_switch_panel_players_music() {
 	const buttons_Players_Music = document.querySelector(
 		".buttons_Players_Music"
 	)
+	textPlayers.classList.remove('textPlayersOpen')
+	textPlayersMusic.classList.remove('textPlayersMusicOpen')
 	player_music_songs_text.classList.remove("player_music_songs_text_open")
 	body.classList.remove("body_Players_Music_Open")
 	play_Music.classList.remove("play_Music_Open")

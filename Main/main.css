@@ -195,11 +195,12 @@ a {
 .play_Music {
 	display: grid;
 	grid-template-columns: 100%;
-	grid-template-rows: 10% 20% 50% 5%;
+	grid-template-rows: 10% 20% 50% 8%;
 	grid-template-areas:
 		"switch_Menu_Song_Img"
 		"img_Icon_Autorh_InPlayers"
 		"range_Audio"
+	 "textPlayersMusic"
 		"buttons_Players_Music";
 	background: linear-gradient(
 		180deg,
@@ -662,21 +663,51 @@ a {
 	display: flex;
 	margin-left: 10px;
 }
+.textPlayers{
+	grid-area: textPlayersMusic;
+	width: 150px;
+	white-space:nowrap;
+	overflow:hidden;
+	color: #ffc7c7;
+	
+}
+.textPlayersMusic{
+	color: #ffc7c7;
+	animation: marquee 10s infinite linear;
+}
+	
+	
+	
+	@-webkit-keyframes marquee {
+	0%{-webkit-transform: translate(0, 0);}
+	100%{-webkit-transform: translate(-100%, 0);}
+	}
+	@keyframes marquee{
+	0%{transform: translate(0, 0);}
+	100%{transform: translate(-100%, 0)}
+	}
 .body_Players_Music_Open {
 	grid-template-columns: 20% 52%;
+}
+.textPlayersMusicOpen{
+	animation:none;
+}
+.textPlayersOpen{
+	width: auto;
 }
 .play_Music_Open {
 	transition-duration: 0.5s;
 	display: grid;
 	margin-right: 0px;
-	grid-template-rows: 10% 60% 10% 10%;
+	grid-template-rows: 15% 50% 8% 10%;
 	grid-template-columns: 100%;
 	justify-content: center;
 	grid-template-areas:
 		"switch_Menu_Song_Img"
 		"img_Icon_Autorh_InPlayers_Open"
+		"textPlayersMusic"
 		"buttons_Players_Music"
-		" range_Audio_Open";
+			"range_Audio_Open";
 }
 .switch_Menu_Song_Button_Open {
 	margin-top: 0px;
