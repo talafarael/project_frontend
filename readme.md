@@ -1,5 +1,5 @@
 <h1 align="center" style="color:green">
- DUCKMUSIC
+# MusicDuck - HTML Project
  </h1>
  <p align="center">
  Welcome to DuckMusic, your go-to music platform for an unparalleled audio streaming experience. Discover, enjoy, and share your favorite tunes effortlessly with our feature-packed application. </p>
