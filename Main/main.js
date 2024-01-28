@@ -31,7 +31,25 @@ savePage.addEventListener("click", () => {
 		drawAlertLogin(text)
 	}
 })
+function loader(){
+	main_Canvas.innerHTML=''
+main_Canvas.innerHTML=`<div class="loader">
+<span>L</span>
+<span>O</span>
+<span>A</span>
+<span>D</span>
+
+
+<div class="covers">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+
+</div>`
+}
 async function bildSaveSongPage() {
+	loader()
 	const token = localStorage.getItem("token")
 	await fetch("https://project-49di.onrender.com/auth/getsavemusic", {
 		method: "POST",
@@ -50,8 +68,21 @@ async function bildSaveSongPage() {
 
 function autorPage_Like_FunnctioSearch(idlike, fun) {
 	const token = localStorage.getItem("token")
+main_Canvas.innerHTML=''
+main_Canvas.innerHTML=`<div class="loader">
+<span>L</span>
+<span>O</span>
+<span>A</span>
+<span>D</span>
 
-	console.log(idlike)
+
+<div class="covers">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+
+</div>`
 	fetch("https://project-49di.onrender.com/auth/musiclike", {
 		method: "POST",
 		headers: {
@@ -171,6 +202,7 @@ function get_Like2() {
 	}
 }
 function saveSongsFetch(idSongs, token) {
+
 	fetch("https://project-49di.onrender.com/auth/savemusic", {
 		method: "POST",
 		headers: {
@@ -183,6 +215,7 @@ function saveSongsFetch(idSongs, token) {
 	})
 }
 async function getSongsSearch(value) {
+	loader()
 	const val = value
 	console.log(value)
 	const response = await fetch(
@@ -217,6 +250,7 @@ function create_QueryParam_search(queryParam, PagequeryParam) {
 	history.pushState({}, "", newUrl.toString())
 }
 async function getAuthorSearch() {
+
 	const response = await fetch(
 		"https://project-49di.onrender.com/auth/getuauthor"
 	)
@@ -240,6 +274,7 @@ async function Search_button_click() {
 	})
 }
 function fetch_search(value) {
+	loader()
 	fetch("https://project-49di.onrender.com/auth/getmusic", {
 		method: "POST",
 		headers: {
@@ -474,6 +509,7 @@ function switchcase_Page_For_Start(param_Page_Url) {
 switchcase_Page_For_Start(get_Page_queryParam())
 
 function featch_Create_Main_Page() {
+	loader()
 	fetch("https://project-49di.onrender.com/auth/getsongsforcreatmainpage")
 		.then((data) => data.json())
 
@@ -543,14 +579,14 @@ function mainPage_Transition_Autor_Card_Click(event) {
 const audio = document.querySelector(".audioPlayer")
 function autor() {
 	const urlkey = window.location.search
-
+	
 	const url = new URLSearchParams(urlkey)
 
 	const autor = url.get("param")
 	main_Canvas.innerHTML = ""
 	main_Canvas.innerHTML = `<div class='autorPage_Head_Autor_Content'></div><div class='autorPage_Div_Music_Content'></div>
 	`
-
+	
 	fetch("https://project-49di.onrender.com/auth/getsongs", {
 		method: "POST",
 		headers: {
