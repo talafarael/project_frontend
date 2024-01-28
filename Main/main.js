@@ -27,7 +27,7 @@ savePage.addEventListener("click", () => {
 		create_QueryParam("", "save")
 		bildSaveSongPage()
 	} else {
-		const text = ""
+		const text= {img_autor:"../img/a3029645548_16.jpg"}
 		drawAlertLogin(text)
 	}
 })
