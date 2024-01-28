@@ -1,5 +1,5 @@
 <h1 align="center" style="color:green">
- DUCKMUSIC
+# MusicDuck - Music platform
  </h1>
  <p align="center">
  Welcome to DuckMusic, your go-to music platform for an unparalleled audio streaming experience. Discover, enjoy, and share your favorite tunes effortlessly with our feature-packed application. </p>
@@ -35,3 +35,33 @@ Connect with friends, share your favorite tracks, and discover new music togethe
 8. Regular Updates and New Releases
 Stay up-to-date with the latest trends and releases. DuckMusic keeps its library fresh, ensuring you're always in tune with the newest tracks and emerging artists.
  </p>
+
+
+## In Development
+
+We are thrilled to share that DuckMusic is currently undergoing exciting developments to bring you a richer and more immersive music streaming experience. Here's a closer look at what's in the pipeline:
+
+### 1. Karaoke Albums
+Prepare to unleash your inner performer with DuckMusic's upcoming karaoke albums feature! Soon, you'll be able to sing along to your favorite songs, complete with lyrics and synchronized playback controls. Whether you're a seasoned vocalist or just love a good sing-along, our karaoke albums will add a whole new layer of entertainment to your music sessions.
+
+### 2. Genre-Based Sorting
+We understand the importance of easy navigation through your music library. That's why we're introducing genre-based sorting. Tailor your music discovery by effortlessly browsing and filtering your favorite tracks based on genres. Whether you're in the mood for rock, pop, or jazz, DuckMusic's genre-based sorting will help you find the perfect soundtrack for any moment.
+
+### 3. Enhanced User Profiles
+We're revamping user profiles to provide a more personalized and interactive experience. Customize your profile, showcase your favorite playlists, and connect with other music enthusiasts. With enhanced user profiles, DuckMusic becomes not just a platform for music but a vibrant community where you can share your musical journey.
+
+### 4. Live Sessions and Collaborations
+Experience the magic of live music right from the comfort of DuckMusic. Our upcoming live sessions feature will bring you exclusive performances, interviews with artists, and opportunities for collaborative playlists with fellow users. Immerse yourself in the dynamic world of live music within the DuckMusic community.
+
+Stay tuned for these exciting updates! We value your feedback and can't wait to hear what you think about these new features. Keep an eye on our [GitHub repository](https://github.com/talafarael/project_frontend) for progress updates, beta releases, and announcements.
+
+
+
+## Getting Started
+
+To begin working with MusicDuck, clone the repository to your local machine:
+
+```bash
+git clone https://github.com/your-username/musicduck.git
+```
+This updated README includes information about the potential delay in the initial deployment process and asks users to be patient during that period.
