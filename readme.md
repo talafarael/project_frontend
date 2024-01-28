@@ -53,6 +53,6 @@ We're revamping user profiles to provide a more personalized and interactive exp
 ### 4. Live Sessions and Collaborations
 Experience the magic of live music right from the comfort of DuckMusic. Our upcoming live sessions feature will bring you exclusive performances, interviews with artists, and opportunities for collaborative playlists with fellow users. Immerse yourself in the dynamic world of live music within the DuckMusic community.
 
-Stay tuned for these exciting updates! We value your feedback and can't wait to hear what you think about these new features. Keep an eye on our [GitHub repository](https://github.com/talafarael/project_frontend)] for progress updates, beta releases, and announcements.
+Stay tuned for these exciting updates! We value your feedback and can't wait to hear what you think about these new features. Keep an eye on our [GitHub repository](https://github.com/talafarael/project_frontend) for progress updates, beta releases, and announcements.
 
 
