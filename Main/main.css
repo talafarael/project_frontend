@@ -213,12 +213,7 @@ a {
 .svgSubtitles{
 	color: #ffc7c7;
 }
-.textPlayers{
-	grid-area: textPlayers;
-}
-.buttonSubtitlesSong{
-	grid-area: buttonSubtitlesSong;
-}
+
 .line_menu {
 	margin-top: 3%;
 	width: 231px;
