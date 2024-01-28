@@ -954,6 +954,7 @@ height: 130px;
 	.mainPage_Autor_Card_Img_Button:hover div {
 		width: 108px;
 		height: 120px;
+		border-radius: 5px;
 	}
 	.img_Icon_Autorh_InPlayers_Open {
 		width: 200px;
@@ -1029,6 +1030,26 @@ height: 130px;
 }
 
 @media (max-width: 800px) {
+	.alertImg {
+	
+		border-radius: 5px;
+		margin-top: 20px;
+		width: 150px;
+		margin-left: 3%;
+		height: 150px;
+	}.alertLogin{
+		height: 400px;
+		width: 300px;
+		grid-template-rows: 45% 55% ;
+		grid-template-columns: 100%;;
+	}
+	.alertText{
+		font-size: 12px;
+	}
+	.alertButton{
+		width: 150px;
+		height: 30px;
+	}
 	.search_input_head {
 		margin-top: 10px;
 		height: 30px;
