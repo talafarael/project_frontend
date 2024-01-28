@@ -7,7 +7,23 @@ body {
 	background-size: cover; /* Масштабирует фон */
 	background-repeat: no-repeat;
 }
+.supportContainer{	
+	width:100%;
+	height: 30px;
+	font-size: 20PX;
+	bottom: 0;
+	color: #ffc7c7;
+	background: linear-gradient(
+			180deg,
+			rgba(58, 2, 53, 0.8) 0%,
+			rgba(58, 2, 53, 0.28) 99.99%,
+			rgba(58, 2, 53, 0) 100%
+		),
+		rgba(0, 0, 0, 0.2);
+	position: absolute;
+}
 .main {
+	
 	overflow: auto;
 position: relative;
 	height: 100vh;
@@ -246,12 +262,13 @@ a {
 	transition-duration: 0.5s;
 }
 .img_Play_Music {
-	height: 35px;
+	height: 25px;
+	width: 25px;
 	flex-shrink: 0;
 }
 .button_play_music {
-	width: 100%;
-	height: 18%;
+	width: 70%;
+	height: 10%;
 	border: 0px;
 	background: none;
 }
@@ -280,6 +297,7 @@ a {
 	flex-shrink: 0;
 }
 .mainPage_autor_Div {
+	border-radius: 25px;
 	width: 90%;
 	height: 278px;
 	flex-shrink: 0;
@@ -340,6 +358,7 @@ a {
 	height: 37%;
 }
 .autorPage_Div_Music_Content_Music_Play_Img {
+	padding-bottom: 60px;
 	margin-left: 2vw;
 	width: 80px;
 	height: 85px;
@@ -606,6 +625,10 @@ a {
 	margin-left: 3%;
 	height: 400px;
 }
+.play_Music::-webkit-scrollbar {
+	width: 0; /* Ширина полосы прокрутки */
+}
+
 .alertLogin {
 	border-radius: 25px;
 	top: 20vh;
@@ -686,28 +709,29 @@ a {
 	height: 175px;
 }
 .next_Song_Img {
-	margin-left: -5px;
-	width: 120%;
-	height: 120%;
+	margin-left: 0px;
+	width: 100%;
+	height: 100%;
 }
 .previous_Song_Img {
-	width: 120%;
-	height: 120%;
+	width:25px;
+	height:25px;
 }
 .buttons_Players_Music {
 	grid-area: buttons_Players_Music;
 	display: flex;
-	margin-left: 10px;
+	margin-left: 0px;
 }
 .textPlayers{
 	grid-area: textPlayersMusic;
-	width: 150px;
+	width: 120px;
 	white-space:nowrap;
-	overflow:hidden;
+	overflow: hidden;
 	color: #ffc7c7;
 	
 }
 .textPlayersMusic{
+	
 	color: #ffc7c7;
 	animation: marquee 10s infinite linear;
 }
@@ -839,6 +863,7 @@ a {
 }
 
 @media (max-width: 1300px) {
+	
 	.img_Icon_Autorh_InPlayers_Open {
 		width: 300px;
 		height: 300px;
@@ -895,6 +920,7 @@ a {
 		padding-left: 50px;
 	}
 	.mainPage_Autor_Card_Img {
+		border-radius: 5px;
 		font-size: 10px;
 		width: 108px;
 		height: 120px;
@@ -1073,12 +1099,21 @@ a {
 		width: 50px;
 		height: 50px;
 	}
-
+	.supportContainer{
+		font-size: 12px;
+		height: 20px;
+		bottom:  10vh;
+		background: linear-gradient(
+		180deg,
+		rgba(0, 0, 0, 0.31) 130.68%,
+		rgba(217, 217, 217, 0) 130.69%
+	);
+	}
 	.play_Music {
 		position: fixed;
 		display: grid;
 	
-		bottom: 0;
+		bottom: 0px;
 		width: 100%;
 		height: 10vh;
   z-index: 1;
@@ -1129,6 +1164,7 @@ a {
 	.switch_Menu_Song_Button {
 		margin-right: 0px;
 	}
+	
 	.play_Music_Open {
 		display: grid;
 	
@@ -1396,8 +1432,9 @@ a {
 		width: 25vw;
 	}
 	.next_Song_Img {
-		width: 30px;
-		height: 30px;
+		margin-left: 0px;
+		width:25px;
+		height: 25px;
 	}
 	.img_Play_Music {
 		width: 30px;
