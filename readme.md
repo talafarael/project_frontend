@@ -35,7 +35,7 @@ Connect with friends, share your favorite tracks, and discover new music togethe
 8. Regular Updates and New Releases
 Stay up-to-date with the latest trends and releases. DuckMusic keeps its library fresh, ensuring you're always in tune with the newest tracks and emerging artists.
  </p>
-...
+
 
 ## In Development
 
@@ -55,6 +55,4 @@ Experience the magic of live music right from the comfort of DuckMusic. Our upco
 
 Stay tuned for these exciting updates! We value your feedback and can't wait to hear what you think about these new features. Keep an eye on our [GitHub repository](https://github.com/your-username/duckmusic) for progress updates, beta releases, and announcements.
 
-## Contributing
 
-...
