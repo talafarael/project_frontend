@@ -1161,6 +1161,9 @@ a {
 		margin-left: 30px;
 		margin-top: 3px;
 	}
+	.buttonSubtitlesSong{
+		grid-area: buttonSubtitlesSong;
+	}
 }
 @media (max-width: 600px) {
 	.autorPage_Head_Autor_Content_Img_Slider {
