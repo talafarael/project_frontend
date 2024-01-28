@@ -94,7 +94,7 @@ main_Canvas.innerHTML=`<div class="loader">
 		}),
 	}).then(() => {
 		autorPage_Check_Authorization(() => fun())
-		return console.log("all good")
+		return 
 	})
 }
 function SaveSongsBild(data) {
@@ -103,12 +103,12 @@ function SaveSongsBild(data) {
 	data.forEach((arr) => {
 		let like_Img = "../img/image8.png"
 		if (data.user) {
-			console.log(arr._id)
+	
 			const like_User = data.user.liker_songs + " "
-			console.log(like_User.includes(arr._id))
+		
 
 			if (like_User.includes(arr._id)) {
-				console.log("true")
+			
 				like_Img = "../img/image 8 (2).png"
 			}
 		}
@@ -158,8 +158,7 @@ function saveSongs(event) {
 			const res = falseTrue_Check_Authorization()
 			const token = localStorage.getItem("token")
 			let id_Like = e.target.id
-			console.log(data_Songs)
-			console.log(id_Like)
+		
 			if (res) {
 				saveSongsFetch(id_Like, token)
 			} else {
@@ -167,7 +166,7 @@ function saveSongs(event) {
 					({_id}) => _id.trim() === String(id_Like).trim()
 				)
 
-				console.log(text)
+		
 				drawAlertLogin(text)
 			}
 		})
@@ -183,8 +182,7 @@ function get_Like2() {
 			function (event) {
 				const res = falseTrue_Check_Authorization()
 				let id_Like = event.target.id
-				console.log(data_Songs)
-				console.log(id_Like)
+			
 				if (res) {
 					autorPage_Check_Authorization(() =>
 						autorPage_Like_FunnctioSearch(id_Like, bildSaveSongPage)
@@ -194,7 +192,7 @@ function get_Like2() {
 						({_id}) => _id.trim() === String(id_Like).trim()
 					)
 
-					console.log(text)
+				
 					drawAlertLogin(text)
 				}
 			}
@@ -217,7 +215,7 @@ function saveSongsFetch(idSongs, token) {
 async function getSongsSearch(value) {
 	loader()
 	const val = value
-	console.log(value)
+
 	const response = await fetch(
 		"https://project-49di.onrender.com/auth/getmusic",
 		{
@@ -297,7 +295,7 @@ function transitionAuthorPage(event) {
 		elem.addEventListener("click", (e) => {
 			const clickedId = e.target.id
 			const Author = clickedId.split("_")
-			console.log(clickedId)
+			
 			delete_QueryParam_search()
 			delete_QueryParam()
 			create_QueryParam(Author[1], "autor")
@@ -310,7 +308,7 @@ function bild_search(data) {
 	const author = data.author
 	const musics = data.musics
 	data_Songs = musics
-	console.log(data)
+
 	main_Canvas.innerHTML = ""
 	main_Canvas.innerHTML = `<div class='searchAllAuthorContainer'>
     ${author
@@ -330,18 +328,18 @@ function bild_search(data) {
 	const searchAuthorContainer = document.querySelectorAll(
 		".searchAuthorContainer"
 	)
-	console.log(searchAuthorContainer)
+
 	transitionAuthorPage(searchAuthorContainer)
 
 	musics.forEach((arr) => {
 		let like_Img = "../img/image8.png"
 		if (data.user) {
-			console.log(arr._id)
+			
 			const like_User = data.user.liker_songs + " "
-			console.log(like_User.includes(arr._id))
+		
 
 			if (like_User.includes(arr._id)) {
-				console.log("true")
+		
 				like_Img = "../img/image 8 (2).png"
 			}
 		}
@@ -350,7 +348,7 @@ function bild_search(data) {
 		)
 		Id_Playing_Songs = arr.idpath
 
-		console.log(data_Songs)
+
 		search_container_music.innerHTML += `
 <div class='autorPage_Div_Music_Li'>
     
@@ -434,18 +432,18 @@ function create_QueryParam(queryParam, PagequeryParam) {
 }
 function autorPage_Check_Authorization(function_True) {
 	const time = localStorage.getItem("time")
-	console.log(now_Time())
+
 	if (time - now_Time() >= 0) {
-		console.log("faf")
+	
 		function_True()
 	} else {
 		localStorage.removeItem("time")
-		console.log("aaa")
+
 	}
 }
 function falseTrue_Check_Authorization(function_True) {
 	const time = localStorage.getItem("time")
-	console.log(now_Time())
+
 	if (time - now_Time() >= 0) {
 		return true
 	} else {
@@ -455,13 +453,13 @@ function falseTrue_Check_Authorization(function_True) {
 }
 function check_Suaitability_token() {
 	const time = localStorage.getItem("time")
-	console.log(now_Time())
+
 	if (time - now_Time() >= 0) {
 		return localStorage.getItem("token")
 	} else {
 		localStorage.removeItem("time")
 		localStorage.removeItem("token")
-		console.log("aaa")
+
 	}
 }
 function creatTime() {
@@ -474,7 +472,7 @@ function now_Time() {
 	let hour = now.getHours()
 	if (now.getHours().length <= 10) {
 		hour = "0" + now.getHours()
-		console.log(hour)
+	
 	}
 	const date = now.getDate() + "." + hour
 	return date
@@ -486,7 +484,7 @@ buttons_Switches.forEach((button) => {
 	})
 })
 function switchcase_Page_For_Start(param_Page_Url) {
-	console.log(param_Page_Url)
+
 	if (
 		(param_Page_Url.page == null && param_Page_Url.search == null) ||
 		param_Page_Url == "main"
@@ -514,8 +512,7 @@ function featch_Create_Main_Page() {
 		.then((data) => data.json())
 
 		.then((res) => {
-			console.log(res)
-			console.log("ff")
+			
 			Bild_Create_Main_Page(res)
 		})
 }
@@ -523,7 +520,7 @@ function Bild_Create_Main_Page(res) {
 	delete_QueryParam_search()
 	delete_QueryParam()
 	const arry = res.arr
-	console.log(arry)
+
 	main_Canvas.innerHTML = ""
 	main_Canvas.innerHTML = `<div class="mainPage_autor_Div"></div>
 	`
@@ -542,7 +539,7 @@ function Create_autor_Card(arry) {
 	arry.autor.forEach((autor) => {
 		const img = autor.img
 
-		console.log(autor)
+	
 		mainPage_Autor_Div_For_card.innerHTML += `<div>
         </div><div class="mainPage_autor_card">
 <button class="mainPage_Autor_Card_Img_Button"id='autor_${autor.autor}'>
@@ -566,7 +563,7 @@ function mainPage_Transition_Autor_Card_Click(event) {
 			const arr = clickedId.split("_")
 			const function_url = arr[0]
 			const queryParam = arr[1]
-			console.log(function_url)
+	
 			delete_QueryParam()
 			create_QueryParam(queryParam, function_url)
 
@@ -629,7 +626,7 @@ function fetch_Get_Songs_For_Autor() {
 			return response.json()
 		})
 		.then((data) => {
-			console.log(data)
+
 			featch_autorPage_Create_MusicPlayer(data)
 		})
 }
@@ -651,12 +648,12 @@ function featch_autorPage_Create_MusicPlayer(data) {
 	data.music.forEach((arr) => {
 		let like_Img = "../img/image8.png"
 		if (data.user) {
-			console.log(arr._id)
+		
 			const like_User = data.user.liker_songs + " "
-			console.log(like_User.includes(arr._id))
+			
 
 			if (like_User.includes(arr._id)) {
-				console.log("true")
+				
 				like_Img = "../img/image 8 (2).png"
 			}
 		}
@@ -707,10 +704,10 @@ function Function_Next_Music_For_Play_List() {
 	for (let i = 0; i < data_Songs.length; i++) {
 		data = data_Songs[i].idpath
 		if (data == Id_Playing_Songs) {
-			console.log("aaaa")
+			
 
 			next_Song = i + 1
-			console.log(" next_Song" + next_Song)
+		
 
 			if (data_Songs.length + 1 == next_Song) {
 				document.getElementById(data_Songs[i].idpath).src =
@@ -722,15 +719,13 @@ function Function_Next_Music_For_Play_List() {
 				audio.src = data_Songs[next_Song].idpath
 				
 				audio.play()
-				console.log(data_Songs[next_Song])
   
 				textPlayersMusic.innerHTML=''
 				textPlayersMusic.innerHTML=`${data_Songs[next_Song].songs}`
-				img_Icon_Autorh_InPlayers_Img.src =data_Songs[next_Song].autor
-					data_Songs[next_Song].img_autor
+				img_Icon_Autorh_InPlayers_Img.src=	data_Songs[next_Song].img_autor
+			
 					buttonSubtitlesSong.id=data_Songs[next_Song].textSongs
-					img_Play_Music.src =
-"../img/icons8-pause-30.png"
+					img_Play_Music.src ="../img/icons8-pause-30.png"
 				document.getElementById(data_Songs[i].idpath).src =
 					"../img/2ff977b7-2c90-41d5-813f-49170d570561.png"
 				document.getElementById(data_Songs[next_Song].idpath).src =
@@ -745,11 +740,10 @@ function Function_Previous_Music_For_Play_List() {
 	for (let i = 0; i < data_Songs.length; i++) {
 		data = data_Songs[i].idpath
 		if (data == Id_Playing_Songs) {
-			console.log("aaaa")
+	
 
 			next_Song = i - 1
-			console.log(data_Songs.length)
-			console.log(next_Song)
+		
 			if (0 > next_Song) {
 				document.getElementById(data_Songs[i].idpath).src =
 					"../img/2ff977b7-2c90-41d5-813f-49170d570561.png"
@@ -780,7 +774,7 @@ function Function_Previous_Music_For_Play_List() {
 }
 buttonSubtitlesSong.addEventListener('click',()=>{
 if(buttonSubtitlesSong.id !== ''&& !Subtitles){
-	console.log('afafa')
+
  SubtitlesSong.classList.add('SubtitlesSongOpen')
 	SubtitlesSong.innerHTML= ''
 
@@ -801,12 +795,12 @@ const img_Icon_Autorh_InPlayers_Img = document.querySelector(
 )
 function featch_autorPage_Create_Autor(info) {
 	const autors = info.autors[0]
-	console.log(autors)
+
 
 	const autorPage_Head_Autor_Content = document.querySelector(
 		".autorPage_Head_Autor_Content"
 	)
-	console.log(img_Icon_Autorh_InPlayers_Img.src)
+
 	if (img_Icon_Autorh_InPlayers_Img.src == "http://127.0.0.1:5500/img/a3029645548_16.jpg") {
 		img_Icon_Autorh_InPlayers_Img.src = autors.img
 	}
@@ -840,7 +834,7 @@ function featch_autorPage_Create_Autor(info) {
 	const autorPage_Head_Img_Center = document.getElementById(
 		"autorPage_Head_Autor_Content_Img_Center"
 	)
-	console.log(autorPage_Head_Img_Center)
+
 	autorPage_Img_SwitcheCase(autorPage_Head_Autor_Content_Img_SwitcheCase)
 }
 function autorPage_Img_switchMain(data_Id, data_Src) {
@@ -880,8 +874,7 @@ function get_Like() {
 			function (event) {
 				const res = falseTrue_Check_Authorization()
 				let id_Like = event.target.id
-				console.log(data_Songs)
-				console.log(id_Like)
+			
 				if (res) {
 					autorPage_Check_Authorization(() =>
 						autorPage_Like_Function(id_Like)
@@ -891,7 +884,7 @@ function get_Like() {
 						({_id}) => _id.trim() === String(id_Like).trim()
 					)
 
-					console.log(text)
+	
 					drawAlertLogin(text)
 				}
 			}
@@ -924,7 +917,7 @@ function drawAlertLogin(data) {
 function autorPage_Like_Function(idlike) {
 	const token = localStorage.getItem("token")
 
-	console.log(idlike)
+
 	fetch("https://project-49di.onrender.com/auth/musiclike", {
 		method: "POST",
 		headers: {
@@ -958,14 +951,14 @@ function Button_Play_Music(id_Element) {
 	const autorPage_Div_Music_Play_Button_Img_Songs = document.querySelectorAll(
 		".autorPage_Div_Music_Play_Button_Img_Songs"
 	)
-	console.log(id_Element)
+
 	Id_Playing_Songs = id_Element
 	checks_Play_Music(id_Element)
 }
 
 function get_Id_Mass(element, function_event) {
 	element.forEach((element) => {
-		console.log()
+
 		element.addEventListener("click", (e) => {
 			const id_Element = e.target.id
 
@@ -1017,9 +1010,9 @@ function authorths_Page_Img_Icon() {
 img_Play_Music.addEventListener("click", () => {
 	const url = audio.src
 	const partAfterSymbol = url.split("/").pop()
-	console.log(partAfterSymbol)
+
 	if ("null" == partAfterSymbol) {
-		console.log("affaafaaaaaaaaaaaaaaaaaaaaaaa")
+
 	} else {
 		checks_Play_Music()
 	}
@@ -1037,7 +1030,7 @@ img_Play_Music.addEventListener("click", () => {
 //   });
 audio.addEventListener("loadedmetadata", function () {
 	const duration = audio.duration // Получаем общую продолжительность аудио в секундах
-	console.log(duration)
+
 	range_Audio.setAttribute("max", duration) // Устанавливаем максимальное значение ползунка как общую продолжительность аудио
 
 	range_Audio.addEventListener("input", function () {
@@ -1063,7 +1056,7 @@ function click_Switch_Menu_Song_Button() {
 		if (switch_menu_song_button_boolean) {
 			bild_switch_panel_players_music()
 			switch_menu_song_button_boolean = false
-			console.log("aaaaaaaaa")
+			
 		} else {
 			remove_switch_panel_players_music()
 			switch_menu_song_button_boolean = true
