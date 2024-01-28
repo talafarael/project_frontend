@@ -1,19 +1,22 @@
 const buttons_Switches = document.querySelectorAll(".menu_item")
-const main_Canvas = document.querySelector(".main")
+const main_Canvas = document.querySelector(".main_Canvas")
 const range_Audio = document.querySelector(".range_Audio")
 const img_Play_Music = document.querySelector(".img_Play_Music")
 const search = document.getElementById("search")
 const buttonSubtitlesSong=document.querySelector('.buttonSubtitlesSong')
 const savePage = document.querySelector(".savePage")
+const textPlayersMusic=document.querySelector('.textPlayersMusic')
 const textPlayers=document.querySelector('.textPlayers')
 const text_for_profile = document.querySelector(".text_for_profile")
 const Alert = document.querySelector(".Alert")
+const ImgSubtitlesSong=document.querySelector('.ImgSubtitlesSong')
+const SubtitlesSong=document.querySelector('.SubtitlesSong')
 const head_search_container = document.querySelector(".head_search_container")
 let input_toggle = false
 let data_Songs
 let Id_Playing_Songs
 let music_data
-
+let Subtitles=false
 let author_data
 savePage.addEventListener("click", () => {
 	const res = falseTrue_Check_Authorization()
@@ -486,7 +489,8 @@ function Bild_Create_Main_Page(res) {
 	const arry = res.arr
 	console.log(arry)
 	main_Canvas.innerHTML = ""
-	main_Canvas.innerHTML = `<div class="mainPage_autor_Div"></div>`
+	main_Canvas.innerHTML = `<div class="mainPage_autor_Div"></div>
+	`
 	const mainPage_autor_Div = document.querySelector(".mainPage_autor_Div")
 	mainPage_autor_Div.innerHTML = `<h1 class="mainPage_Autor_title">Автори</h1>
     <div class='mainPage_Autor_Div_For_card'>  </div>`
@@ -544,7 +548,8 @@ function autor() {
 
 	const autor = url.get("param")
 	main_Canvas.innerHTML = ""
-	main_Canvas.innerHTML = `<div class='autorPage_Head_Autor_Content'></div><div class='autorPage_Div_Music_Content'></div>`
+	main_Canvas.innerHTML = `<div class='autorPage_Head_Autor_Content'></div><div class='autorPage_Div_Music_Content'></div>
+	`
 
 	fetch("https://project-49di.onrender.com/auth/getsongs", {
 		method: "POST",
@@ -601,6 +606,7 @@ function featch_autorPage_Create_MusicPlayer(data) {
 	autorPage_Div_Music_Content.innerHTML = `
     <div class='autorPage_Div_Music_Content_line'> </div>
     <div class='autorPage_Div_Music_Content_MusicLIst'></div>
+				
     `
 	const autorPage_Div_Music_Content_MusicLIst = document.querySelector(
 		".autorPage_Div_Music_Content_MusicLIst"
@@ -686,6 +692,7 @@ function Function_Next_Music_For_Play_List() {
 				textPlayersMusic.innerHTML=`${data_Songs[next_Song].songs}`
 				img_Icon_Autorh_InPlayers_Img.src =data_Songs[next_Song].autor
 					data_Songs[next_Song].img_autor
+					buttonSubtitlesSong.id=data_Songs[next_Song].textSongs
 					img_Play_Music.src =
 "../img/icons8-pause-30.png"
 				document.getElementById(data_Songs[i].idpath).src =
@@ -718,6 +725,7 @@ function Function_Previous_Music_For_Play_List() {
 				"../img/icons8-pause-30.png"
 				Id_Playing_Songs = data_Songs[next_Song].idpath
 				audio.src = data_Songs[next_Song].idpath
+				buttonSubtitlesSong.id=data_Songs[next_Song].textSongs
 				audio.play()
 		
 				img_Icon_Autorh_InPlayers_Img.src =
@@ -735,7 +743,22 @@ function Function_Previous_Music_For_Play_List() {
 	}
 }
 buttonSubtitlesSong.addEventListener('click',()=>{
+if(buttonSubtitlesSong.id !== ''&& !Subtitles){
+	console.log('afafa')
+ SubtitlesSong.classList.add('SubtitlesSongOpen')
+	SubtitlesSong.innerHTML= ''
 
+	ImgSubtitlesSong.src='../img/icons8-subtitles-24 (1).png'
+	main_Canvas.classList.add('SubtitlesMainCanvasOpen')
+	SubtitlesSong.innerHTML = `<pre>${buttonSubtitlesSong.id}</pre>`;
+	Subtitles=true
+}else{
+	ImgSubtitlesSong.src='../img/icons8-subtitles-24.png'
+	Subtitles=false
+	SubtitlesSong.classList.remove('SubtitlesSongOpen')
+	SubtitlesSong.innerHTML= ''
+	main_Canvas.classList.remove('SubtitlesMainCanvasOpen')
+}
 })
 const img_Icon_Autorh_InPlayers_Img = document.querySelector(
 	".img_Icon_Autorh_InPlayers_Img"
@@ -926,7 +949,7 @@ function checks_Play_Music(id_Element) {
 	authorths_Page_Img_Icon()
 	if (audio.paused) {
 		audio.play()
-		
+	
 		authorths_Page_Img_Icon()
 		if (document.getElementById(Id_Playing_Songs)) {
 			document.getElementById(Id_Playing_Songs).src =
@@ -945,10 +968,13 @@ function checks_Play_Music(id_Element) {
 function authorths_Page_Img_Icon() {
 	for (let i = 0; i < data_Songs.length; i++) {
 		data = data_Songs[i].idpath
+	
 		if (data == Id_Playing_Songs) {
+				buttonSubtitlesSong.id=data_Songs[i].textSongs
 			img_Icon_Autorh_InPlayers_Img.src = data_Songs[i].img_autor
 			textPlayersMusic.innerHTML=''
 				textPlayersMusic.innerHTML=`${data_Songs[i].songs}`
+			
 		}
 	}
 }
