@@ -56,3 +56,10 @@ Experience the magic of live music right from the comfort of DuckMusic. Our upco
 Stay tuned for these exciting updates! We value your feedback and can't wait to hear what you think about these new features. Keep an eye on our [GitHub repository](https://github.com/talafarael/project_frontend) for progress updates, beta releases, and announcements.
 
 
+
+## Getting Started
+
+To begin working with MusicDuck, clone the repository to your local machine:
+
+```bash
+git clone https://github.com/your-username/musicduck.git
