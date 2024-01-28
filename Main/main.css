@@ -1617,7 +1617,7 @@ span {
 }
 
 .covers span {
-  background: linear-gradient(180deg, white 0, #ddd 100%);
+	background: rgba(138, 51, 51, 1);
   animation: up 2s infinite;
 }
 
