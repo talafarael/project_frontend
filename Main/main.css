@@ -949,9 +949,10 @@ a {
 	}
 
 	.search_container_music {
-		width: 1px;
+
 		margin-left: 7vw;
 		margin-top: 20px;
+		padding-bottom: 10%;
 	}
 	.autorPage_Head_Autor_Content_Img_Left {
 		margin-left: 10%;
