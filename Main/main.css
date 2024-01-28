@@ -949,7 +949,7 @@ a {
 	}
 
 	.search_container_music {
-		width: 100%;
+		width: 1px;
 		margin-left: 7vw;
 		margin-top: 20px;
 	}
@@ -1080,7 +1080,7 @@ a {
 		bottom: 0;
 		width: 100%;
 		height: 10vh;
-
+  z-index: 1;
 		grid-template-rows:  40%;
 		grid-template-columns: 0% 10% 25%  20% 0% 30% 5%;	
 		grid-template-areas:
