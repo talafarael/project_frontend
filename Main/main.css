@@ -949,6 +949,7 @@ a {
 	}
 
 	.search_container_music {
+		width: 100%;
 		margin-left: 7vw;
 		margin-top: 20px;
 	}
