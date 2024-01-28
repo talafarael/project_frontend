@@ -63,3 +63,5 @@ To begin working with MusicDuck, clone the repository to your local machine:
 
 ```bash
 git clone https://github.com/your-username/musicduck.git
+```
+This updated README includes information about the potential delay in the initial deployment process and asks users to be patient during that period.
