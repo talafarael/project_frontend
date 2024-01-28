@@ -26,6 +26,10 @@ body {
 	align-items: center;
 }
 .supportText{
+	display: flex;
+	justify-content: end;
+	margin-left: 0;
+	width: 100%;
 	animation: marquee 7s infinite linear;
 }
 .main {
@@ -1037,7 +1041,8 @@ height: 130px;
 		width: 150px;
 		margin-left: 3%;
 		height: 150px;
-	}.alertLogin{
+	}
+	.alertLogin{
 		height: 400px;
 		width: 300px;
 		grid-template-rows: 45% 55% ;
