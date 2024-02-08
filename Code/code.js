@@ -29,7 +29,8 @@ body:JSON.stringify({password:password})}
 
 
 })
-function c(){fetch('https://project-49di.onrender.com/auth/sendemail').then(data=> 
+function c(){fetch('https://project-49di.onrender.com/auth/sendemail')
+.then(data=> 
    
 data.json()
 
